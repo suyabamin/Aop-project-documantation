@@ -1,4056 +1,2331 @@
-
-# NexusOS — Unified Enterprise Operating System
+# 🌱 AgroAI
+## Dynamic Agricultural Management, Farmer Marketplace & AI Decision Support Platform
 
 <p align="center">
-  <strong>One Platform. Every Department. Connected Workflows.</strong>
+  <strong>Smart Agriculture • Intelligent Farm Management • AI-Powered Decision Support</strong>
 </p>
 
 <p align="center">
-  A centralized enterprise management platform designed to connect business departments, automate organizational workflows, and provide real-time operational insights.
+  A university Object-Oriented Programming (OOP) Lab Project
 </p>
 
 <p align="center">
-  ![Project Status](https://img.shields.io/badge/Status-Proposed%20University%20Project-blue)
-  ![Frontend](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-61DAFB)
-  ![Backend](https://img.shields.io/badge/Backend-Spring%20Boot-6DB33F)
-  ![Database](https://img.shields.io/badge/Database-PostgreSQL-4169E1)
-  ![License](https://img.shields.io/badge/License-To%20Be%20Decided-lightgrey)
+
+![Project Status](https://img.shields.io/badge/Status-Development%20Planning-blue)
+![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?logo=springboot)
+![React](https://img.shields.io/badge/React-TypeScript-61DAFB?logo=react)
+![Firebase](https://img.shields.io/badge/Database-Firebase%20Firestore-FFCA28?logo=firebase)
+![Python](https://img.shields.io/badge/AI-Python-3776AB?logo=python)
+![License](https://img.shields.io/badge/License-TBD-lightgrey)
+
 </p>
 
 ---
 
-# PART I — SOFTWARE REQUIREMENTS SPECIFICATION (ENGLISH)
+# 📑 Table of Contents
 
-## 1. Project Overview
+- [1. Project Introduction](#-1-project-introduction)
+- [2. বাংলা পরিচিতি](#-2-বাংলা-পরিচিতি)
+- [3. Project Vision](#-3-project-vision)
+- [4. Problem Statement](#-4-problem-statement)
+- [5. Proposed Solution](#-5-proposed-solution)
+- [6. Project Objectives](#-6-project-objectives)
+- [7. Target Users and User Roles](#-7-target-users-and-user-roles)
+- [8. System Features and Modules](#-8-system-features-and-modules)
+- [9. System Architecture](#-9-system-architecture)
+- [10. Technology Stack](#-10-technology-stack)
+- [11. Software Requirements Specification (SRS)](#-11-software-requirements-specification-srs)
+- [12. Functional Requirements](#-12-functional-requirements)
+- [13. Non-Functional Requirements](#-13-non-functional-requirements)
+- [14. Use Case Diagram](#-14-use-case-diagram)
+- [15. UML Class Diagram](#-15-uml-class-diagram)
+- [16. Entity Relationship and Firestore Data Design](#-16-entity-relationship-and-firestore-data-design)
+- [17. Database Collection Structure](#-17-database-collection-structure)
+- [18. AI Architecture and Workflow](#-18-ai-architecture-and-workflow)
+- [19. Farmer Recruitment Workflow](#-19-farmer-recruitment-workflow)
+- [20. Farmer Assignment Workflow](#-20-farmer-assignment-workflow)
+- [21. Activity and Data Flow Diagrams](#-21-activity-and-data-flow-diagrams)
+- [22. API Documentation Blueprint](#-22-api-documentation-blueprint)
+- [23. Authentication and Authorization](#-23-authentication-and-authorization)
+- [24. Object-Oriented Programming Implementation](#-24-object-oriented-programming-implementation)
+- [25. User Interface Structure](#-25-user-interface-structure)
+- [26. Project Directory Structure](#-26-project-directory-structure)
+- [27. Installation and Setup](#-27-installation-and-setup)
+- [28. Environment Configuration](#-28-environment-configuration)
+- [29. Development Roadmap](#-29-development-roadmap)
+- [30. Team Responsibilities](#-30-team-responsibilities)
+- [31. Testing Strategy](#-31-testing-strategy)
+- [32. Security Considerations](#-32-security-considerations)
+- [33. Future Improvements](#-33-future-improvements)
+- [34. Limitations](#-34-limitations)
+- [35. Frequently Asked Questions](#-35-frequently-asked-questions)
+- [36. Contributors](#-36-contributors)
+- [37. Acknowledgements](#-37-acknowledgements)
 
-### 1.1 Project Information
+---
 
-| Field | Description |
+# 🌾 1. Project Introduction
+
+**AgroAI** is a dynamic agricultural management and AI-powered decision support platform designed to connect farm owners, agricultural workers, and modern agricultural intelligence in one integrated system.
+
+The platform provides digital farm management, field-level monitoring, farmer recruitment, worker assignment, agricultural data collection, crop disease detection, soil analysis, irrigation recommendations, and historical activity tracking.
+
+Unlike a traditional farm management application, AgroAI combines agricultural management with a farmer marketplace and an AI-assisted agricultural analysis system.
+
+### Core Concept
+
+AgroAI is built around three major components:
+
+1. **Farm Management:** Manage farms, fields, farmers, assignments, and agricultural activities.
+2. **Farmer Marketplace:** Connect farm owners with people looking for agricultural work.
+3. **AI Decision Support:** Analyze agricultural images and data to provide useful insights and recommendations.
+
+### Project Information
+
+| Attribute | Description |
 |---|---|
-| Project Name | NexusOS |
-| Full Name | Unified Enterprise Operating System |
-| Project Type | Enterprise Resource Planning (ERP) / Business Management System |
-| Project Category | University Academic Project |
-| Primary Goal | Centralized business management and workflow automation |
-| Frontend | React, TypeScript, Tailwind CSS |
-| Backend | Java, Spring Boot |
-| Database | PostgreSQL |
-| Authentication | Firebase Authentication |
-| File Storage | Supabase Storage |
-| Architecture | Modular Monolith |
-| Primary Interface | Web Application |
-
-### 1.2 Executive Summary
-
-NexusOS is a proposed centralized enterprise management platform that connects different departments of an organization through a unified digital system.
-
-In many organizations, departments such as Human Resources, Finance, Inventory, Procurement, Sales, and Project Management operate using separate applications, spreadsheets, and manual communication.
-
-This creates disconnected information, duplicated work, delayed approvals, and difficulty monitoring organizational performance.
-
-NexusOS aims to solve these problems by providing a centralized platform where departments can share authorized information, manage their activities, and automate business processes.
-
-Its most important feature is the **Workflow Automation Engine**.
-
-For example, when the IT department requests five laptops:
-
-1. The department submits a purchase request.
-2. The department manager reviews the request.
-3. Finance checks the available budget.
-4. Procurement selects a supplier.
-5. An authorized person approves the purchase order.
-6. Inventory records the received laptops.
-7. IT assigns the laptops to employees.
-8. Finance records the expense.
-9. Management can view the updated business information.
-
-The objective is to make business operations connected, transparent, traceable, and easier to manage.
-
-### 1.3 Project Vision
-
-To create one unified digital operating environment where every department can work together through connected data and automated business processes.
-
-### 1.4 Tagline
-
-**One Platform. Every Department. Connected Workflows.**
+| Project Name | AgroAI |
+| Full Name | Dynamic Agricultural Management, Farmer Marketplace & AI Decision Support Platform |
+| Project Type | Academic Software Engineering Project |
+| Course | Object-Oriented Programming Lab |
+| Main Backend | Java + Spring Boot |
+| Frontend | React + TypeScript |
+| Database | Firebase Firestore |
+| AI Service | Python + FastAPI |
+| Image Storage | Cloudinary |
+| Team Size | 3 Members |
+| Development Status | Planning / Development |
 
 ---
 
-## 2. Problem Statement
+# 🇧🇩 2. বাংলা পরিচিতি
 
-Organizations often use separate systems or manual processes to manage their daily operations.
+**AgroAI** একটি আধুনিক কৃষি ব্যবস্থাপনা ও AI-ভিত্তিক সিদ্ধান্ত গ্রহণের প্ল্যাটফর্ম।
 
-Common problems include:
+এই সিস্টেমের মাধ্যমে একজন কৃষক বা খামার মালিক তার একাধিক খামার পরিচালনা করতে পারবেন, প্রতিটি খামারের অধীনে একাধিক জমি বা Field তৈরি করতে পারবেন এবং প্রতিটি জমিতে একাধিক কৃষিশ্রমিক নিয়োগ করতে পারবেন।
 
-- Employee information is stored in different spreadsheets.
-- Attendance and payroll are managed separately.
-- Purchase requests require manual communication.
-- Inventory information is not updated immediately.
-- Finance departments receive delayed expense information.
-- Managers cannot easily monitor all departments.
-- Approval processes take too much time.
-- Business reports require manual preparation.
-- Important organizational activities are difficult to track.
-- Data duplication creates inconsistencies.
+একই সঙ্গে সাধারণ ব্যবহারকারীরা খামার দেখতে পারবেন, কৃষিশ্রমিকের চাকরির বিজ্ঞপ্তি খুঁজতে পারবেন এবং চাকরির জন্য আবেদন করতে পারবেন।
 
-### 2.1 Proposed Solution
+কৃষিশ্রমিকরা তাদের assigned field দেখতে পারবেন, ফসলের ছবি আপলোড করতে পারবেন এবং মাটির বিভিন্ন তথ্য জমা দিতে পারবেন। AI সিস্টেম সেই তথ্য বিশ্লেষণ করে রোগ শনাক্তকরণ, মাটি বিশ্লেষণ এবং সেচ পরিকল্পনার মতো সিদ্ধান্ত গ্রহণে সহায়তা করবে।
 
-NexusOS provides:
+### AgroAI-এর প্রধান উদ্দেশ্য
 
-- A centralized organizational database.
-- Department-based management modules.
-- Role-based access control.
-- Automated approval workflows.
-- Integrated finance and inventory operations.
-- Centralized document management.
-- Real-time notifications.
-- Business analytics and reporting.
-- Complete activity and audit history.
+- খামার ও জমি ডিজিটালভাবে পরিচালনা করা।
+- খামার মালিক এবং কৃষিশ্রমিকদের মধ্যে সংযোগ তৈরি করা।
+- কৃষিশ্রমিক নিয়োগ ও কাজের দায়িত্ব বণ্টন সহজ করা।
+- ফসলের রোগ শনাক্তকরণে AI ব্যবহার করা।
+- মাটির তথ্য বিশ্লেষণ করা।
+- সেচ পরিকল্পনায় তথ্যভিত্তিক পরামর্শ প্রদান করা।
+- কৃষিকাজের ইতিহাস, পেমেন্ট এবং রেটিং সংরক্ষণ করা।
+
+AgroAI-এর লক্ষ্য হলো কৃষি ব্যবস্থাপনাকে আরও সংগঠিত, তথ্যনির্ভর এবং প্রযুক্তিনির্ভর করে তোলা।
 
 ---
 
-## 3. Project Objectives
+# 🎯 3. Project Vision
 
-### 3.1 Primary Objectives
+Our vision is to build an integrated digital agricultural ecosystem where farm owners can manage their agricultural operations, farmers can discover employment opportunities, and AI technologies can assist with agricultural decision-making.
 
-1. Centralize organizational information.
-2. Connect different departments through shared business processes.
-3. Automate repetitive approval procedures.
-4. Improve organizational communication.
-5. Reduce manual data entry and duplication.
-6. Provide accurate financial and operational reports.
-7. Improve transparency and accountability.
-8. Protect organizational information through access control.
-9. Support multiple branches and departments.
-10. Create an extensible platform for future business requirements.
+### Mission
 
-### 3.2 Specific Objectives
+To make agricultural management more organized, accessible, data-driven, and intelligent.
 
-| ID | Objective | Expected Result |
-|---|---|---|
-| OBJ-01 | Centralized management | One unified platform |
-| OBJ-02 | Employee management | Organized HR records |
-| OBJ-03 | Financial integration | Connected financial operations |
-| OBJ-04 | Inventory tracking | Accurate stock information |
-| OBJ-05 | Workflow automation | Faster approval processes |
-| OBJ-06 | Business analytics | Better management decisions |
-| OBJ-07 | Security | Controlled information access |
-| OBJ-08 | Multi-branch support | Centralized organizational control |
-
----
-
-## 4. Scope of the System
-
-### 4.1 In Scope
-
-The proposed system includes:
-
-- Organization and branch management.
-- Employee and HR management.
-- Attendance and leave management.
-- Payroll information management.
-- Finance and accounting.
-- Inventory and warehouse management.
-- Procurement and supplier management.
-- Customer relationship management.
-- Sales management.
-- Project management.
-- Workflow automation.
-- Internal communication.
-- Document management.
-- Notifications.
-- Analytics and reporting.
-- User roles and permissions.
-- Audit logs.
-- Multi-branch organizational support.
-
-### 4.2 Out of Scope for Initial Version
-
-The following features are not mandatory for the first prototype:
-
-- Full banking integration.
-- Automatic tax submission to government systems.
-- Advanced biometric hardware integration.
-- Native Android and iOS applications.
-- Full enterprise-grade microservices infrastructure.
-- Autonomous AI decision-making.
-- Complex international accounting compliance.
-- Automatic supplier payment processing.
-
-These features may be considered in future versions.
-
----
-
-## 5. Stakeholders and User Roles
-
-### 5.1 Stakeholders
-
-| Stakeholder | Responsibility |
-|---|---|
-| Super Administrator | Platform-level management |
-| Company Administrator | Company configuration |
-| HR Manager | Employee and HR operations |
-| Finance Manager | Financial operations |
-| Procurement Officer | Purchase management |
-| Inventory Manager | Stock and warehouse management |
-| Sales Manager | Sales operations |
-| Project Manager | Project and task management |
-| Department Manager | Department-level approvals |
-| Employee | Personal information and requests |
-| Executive | Business monitoring and reporting |
-
-### 5.2 Role-Based Access Control (RBAC)
-
-The system uses Role-Based Access Control.
-
-A user receives permissions according to their assigned role and organizational scope.
-
-| Role | Main Permissions |
-|---|---|
-| Super Admin | Platform administration |
-| Company Admin | Company-wide configuration |
-| HR Manager | HR and employee management |
-| Finance Manager | Finance and accounting |
-| Procurement Officer | Purchase requests and orders |
-| Inventory Manager | Inventory operations |
-| Sales Manager | Customer and sales management |
-| Project Manager | Projects and tasks |
-| Department Manager | Department approvals |
-| Employee | Own profile, attendance, and requests |
-| Executive | Authorized reports and dashboards |
-
-**Important:** A role alone does not grant unrestricted access. The backend must also check the user's company, branch, department, resource ownership, and specific permissions.
-
----
-
-## 6. System Modules
-
-### 6.1 Organization Management
-
-Features:
-
-- Company profile.
-- Branch creation.
-- Department creation.
-- Designation management.
-- Organizational hierarchy.
-- Organization chart.
-- Branch transfers.
-- Department assignments.
-- Company configuration.
-
-### 6.2 Human Resource Management
-
-Features:
-
-- Employee registration.
-- Employee profiles.
-- Employee identification numbers.
-- Employee documents.
-- Employment history.
-- Department assignments.
-- Designation management.
-- Promotion records.
-- Resignation records.
-- Performance information.
-- Employee status management.
-
-### 6.3 Attendance Management
-
-Features:
-
-- Check-in and check-out.
-- Working-hour calculation.
-- Late-arrival detection.
-- Early-departure detection.
-- Shift schedules.
-- Attendance corrections.
-- Monthly attendance reports.
-- Leave integration.
-
-### 6.4 Leave Management
-
-Features:
-
-- Leave applications.
-- Leave categories.
-- Leave balance.
-- Manager approval.
-- Rejection with reasons.
-- Leave history.
-- Attendance synchronization.
-
-### 6.5 Payroll Management
-
-Features:
-
-- Salary structure.
-- Basic salary.
-- Allowances.
-- Bonuses.
-- Deductions.
-- Salary calculation.
-- Payroll approval.
-- Payslip generation.
-- Payroll history.
-
-Payroll calculations must follow configurable company policies and applicable regulations.
-
-### 6.6 Finance and Accounting
-
-Features:
-
-- Income records.
-- Expense records.
-- Department budgets.
-- Invoices.
-- Accounts payable.
-- Accounts receivable.
-- Payment records.
-- Cash-flow reports.
-- Profit and loss reports.
-- Double-entry accounting foundation.
-- Financial transaction history.
-
-### 6.7 Inventory Management
-
-Features:
-
-- Product registration.
-- Product categories.
-- SKU and barcode support.
-- Warehouse management.
-- Branch stock management.
-- Stock-in operations.
-- Stock-out operations.
-- Stock transfers.
-- Low-stock alerts.
-- Asset tracking.
-- Stock history.
-
-### 6.8 Procurement Management
-
-Features:
-
-- Purchase requests.
-- Supplier registration.
-- Supplier quotations.
-- Price comparison.
-- Purchase approvals.
-- Purchase orders.
-- Goods receiving.
-- Supplier invoices.
-- Supplier payment tracking.
-
-### 6.9 Customer Relationship Management (CRM)
-
-Features:
-
-- Customer profiles.
-- Lead management.
-- Follow-up records.
-- Communication history.
-- Customer feedback.
-- Support tickets.
-- Customer activity history.
-
-### 6.10 Sales Management
-
-Features:
-
-- Product catalog.
-- Customer quotations.
-- Sales orders.
-- Order approval.
-- Delivery tracking.
-- Sales invoices.
-- Payment tracking.
-- Product returns.
-- Sales reports.
-
-### 6.11 Project Management
-
-Features:
-
-- Project creation.
-- Project budgets.
-- Team assignment.
-- Task creation.
-- Task priorities.
-- Deadlines.
-- Kanban board.
-- Gantt chart.
-- Milestones.
-- Time tracking.
-- Project expense tracking.
-- Progress reports.
-
-### 6.12 Workflow Automation Engine
-
-This is the core differentiating feature of NexusOS.
-
-The Workflow Engine allows authorized users to configure business processes using triggers, conditions, actions, and approval steps.
-
-**Main components:**
-
-| Component | Description |
-|---|---|
-| Trigger | Starts a workflow |
-| Condition | Checks whether a rule is satisfied |
-| Action | Executes an operation |
-| Approval | Requests authorization |
-| Delay | Waits for a configured period |
-| Notification | Sends an alert |
-| Execution Log | Records workflow activity |
-| Retry | Handles temporary failures |
-| Versioning | Maintains workflow versions |
-
-**Example workflow:**
-
-```text
-Purchase Request Created
-          |
-          v
-Department Manager Approval
-          |
-          v
-Budget Availability Check
-          |
-          v
-Finance Approval
-          |
-          v
-Procurement Processing
-          |
-          v
-Purchase Order Created
-          |
-          v
-Goods Received
-          |
-          v
-Inventory Updated
-          |
-          v
-Finance Expense Recorded
-          |
-          v
-Workflow Completed
-```
-
-Additional automation examples:
-
-- Leave approved → attendance updated.
-- Product stock below threshold → notification generated.
-- Sales order completed → inventory updated.
-- Salary processed → financial transaction recorded.
-- Project deadline approaching → manager notified.
-- Employee resignation approved → account deactivation workflow initiated.
-
-### 6.13 Communication Management
-
-Features:
-
-- Internal messages.
-- Announcements.
-- Department notices.
-- Comments.
-- Mentions.
-- Email notifications.
-- Push notifications.
-- In-app notifications.
-
-### 6.14 Document Management
-
-Features:
-
-- PDF upload.
-- Image upload.
-- Document categories.
-- Access permissions.
-- Document version history.
-- Expiry reminders.
-- Employee document storage.
-- Purchase and invoice document storage.
-
-### 6.15 Analytics and Business Intelligence
-
-Features:
-
-- Company dashboard.
-- Revenue statistics.
-- Expense statistics.
-- Profit reports.
-- Employee statistics.
-- Attendance reports.
-- Low-stock reports.
-- Pending approval statistics.
-- Branch comparison.
-- Department comparison.
-- Exportable reports.
-
-### 6.16 Optional AI Business Assistant
-
-A future AI assistant may answer questions using authorized business reports.
-
-Example:
-
-- Which department spent the most money this month?
-- Which products have low stock?
-- How many leave applications are pending?
-- What is the total revenue this quarter?
-
-The assistant must only access information that the requesting user is authorized to view.
-
-It must not directly modify sensitive financial or HR records without an authorized workflow.
-
----
-
-## 7. Software Requirements Specification (SRS)
-
-### 7.1 Functional Requirements
-
-Functional requirements describe what the system must do.
-
-#### Organization Management
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-ORG-001 | The system shall allow authorized users to create company profiles. | High |
-| FR-ORG-002 | The system shall support multiple branches. | High |
-| FR-ORG-003 | The system shall support department creation. | High |
-| FR-ORG-004 | The system shall manage employee designations. | High |
-| FR-ORG-005 | The system shall maintain organizational hierarchy. | Medium |
-
-#### Authentication and Authorization
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-AUTH-001 | The system shall authenticate users. | High |
-| FR-AUTH-002 | The system shall verify Firebase ID tokens on the backend. | High |
-| FR-AUTH-003 | The system shall assign roles to users. | High |
-| FR-AUTH-004 | The system shall enforce permission checks on protected APIs. | High |
-| FR-AUTH-005 | The system shall support account deactivation. | High |
-| FR-AUTH-006 | The system shall restrict access by company and organizational scope. | High |
-
-#### Human Resource Management
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-HR-001 | The system shall create employee profiles. | High |
-| FR-HR-002 | The system shall update employee information. | High |
-| FR-HR-003 | The system shall maintain employment history. | Medium |
-| FR-HR-004 | The system shall manage employee documents. | Medium |
-| FR-HR-005 | The system shall record promotion and resignation information. | Medium |
-
-#### Attendance and Leave
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-ATT-001 | The system shall record employee check-in and check-out. | High |
-| FR-ATT-002 | The system shall calculate working hours. | High |
-| FR-ATT-003 | The system shall identify late arrivals. | Medium |
-| FR-ATT-004 | The system shall generate attendance reports. | High |
-| FR-LEAVE-001 | Employees shall be able to submit leave applications. | High |
-| FR-LEAVE-002 | Authorized managers shall approve or reject leave applications. | High |
-| FR-LEAVE-003 | The system shall maintain leave balances. | High |
-| FR-LEAVE-004 | Approved leave shall update relevant attendance records. | High |
-
-#### Finance
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-FIN-001 | The system shall record income and expenses. | High |
-| FR-FIN-002 | The system shall maintain department budgets. | High |
-| FR-FIN-003 | The system shall generate financial reports. | High |
-| FR-FIN-004 | The system shall manage invoices. | Medium |
-| FR-FIN-005 | The system shall maintain payment records. | High |
-| FR-FIN-006 | The system shall support double-entry accounting records. | Medium |
-
-#### Inventory and Procurement
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-INV-001 | The system shall register products. | High |
-| FR-INV-002 | The system shall track stock quantities. | High |
-| FR-INV-003 | The system shall support warehouse and branch stock. | High |
-| FR-INV-004 | The system shall record stock transfers. | High |
-| FR-INV-005 | The system shall generate low-stock alerts. | Medium |
-| FR-PROC-001 | The system shall allow users to submit purchase requests. | High |
-| FR-PROC-002 | The system shall support supplier management. | High |
-| FR-PROC-003 | The system shall manage purchase orders. | High |
-| FR-PROC-004 | The system shall record received goods. | High |
-
-#### CRM and Sales
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-CRM-001 | The system shall maintain customer profiles. | Medium |
-| FR-CRM-002 | The system shall manage leads and follow-ups. | Medium |
-| FR-SALES-001 | The system shall create sales orders. | High |
-| FR-SALES-002 | The system shall generate sales invoices. | High |
-| FR-SALES-003 | The system shall track customer payments. | High |
-| FR-SALES-004 | The system shall update inventory after confirmed sales fulfillment. | High |
-
-#### Project Management
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-PM-001 | Authorized users shall create projects. | Medium |
-| FR-PM-002 | Project managers shall assign tasks. | Medium |
-| FR-PM-003 | Users shall update task progress. | Medium |
-| FR-PM-004 | The system shall display project deadlines. | Medium |
-| FR-PM-005 | The system shall generate project progress reports. | Medium |
-
-#### Workflow Automation
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-WF-001 | Authorized users shall create workflows. | High |
-| FR-WF-002 | The system shall support configurable triggers. | High |
-| FR-WF-003 | The system shall evaluate workflow conditions. | High |
-| FR-WF-004 | The system shall execute configured actions. | High |
-| FR-WF-005 | The system shall support approval steps. | High |
-| FR-WF-006 | The system shall record workflow execution history. | High |
-| FR-WF-007 | The system shall support retry handling for recoverable failures. | Medium |
-| FR-WF-008 | The system shall maintain workflow versions. | Medium |
-| FR-WF-009 | The system shall prevent unauthorized workflow modifications. | High |
-
-#### Communication, Documents, and Reports
-
-| Requirement ID | Requirement | Priority |
-|---|---|---|
-| FR-COM-001 | The system shall send in-app notifications. | Medium |
-| FR-COM-002 | The system shall support organizational announcements. | Medium |
-| FR-DOC-001 | Authorized users shall upload documents. | Medium |
-| FR-DOC-002 | The system shall enforce document access permissions. | High |
-| FR-REP-001 | The system shall generate business reports. | High |
-| FR-REP-002 | The system shall support date-based report filtering. | Medium |
-| FR-REP-003 | The system shall restrict reports according to user permissions. | High |
-| FR-AUD-001 | The system shall record important administrative activities. | High |
-
-### 7.2 Non-Functional Requirements
-
-| ID | Category | Requirement |
-|---|---|---|
-| NFR-001 | Security | Sensitive operations must require server-side authorization. |
-| NFR-002 | Performance | Common operations should respond within an agreed performance target under expected load. |
-| NFR-003 | Scalability | The architecture should support increasing users and business records. |
-| NFR-004 | Reliability | Failed operations must not leave inconsistent business records. |
-| NFR-005 | Usability | The interface must be understandable and consistent. |
-| NFR-006 | Maintainability | The codebase must use modular architecture and clear naming. |
-| NFR-007 | Availability | Deployment should provide documented availability expectations. |
-| NFR-008 | Compatibility | The web application should support modern browsers. |
-| NFR-009 | Accessibility | Important user flows should support keyboard navigation and readable contrast. |
-| NFR-010 | Data Integrity | Financial and inventory operations must preserve data consistency. |
-| NFR-011 | Auditability | Important changes must be traceable. |
-| NFR-012 | Privacy | Users must only access authorized personal and organizational information. |
-| NFR-013 | Backup | Database backup and recovery procedures must be documented. |
-| NFR-014 | Localization | The interface should be designed to support future multilingual functionality. |
-
-Performance targets should be measured under a documented test environment rather than assumed to be guaranteed.
-
----
-
-## 8. Use Cases
-
-### 8.1 Main Use Cases
-
-| Use Case ID | Use Case | Primary Actor |
-|---|---|---|
-| UC-01 | Login | All Users |
-| UC-02 | Manage Organization | Company Admin |
-| UC-03 | Manage Employees | HR Manager |
-| UC-04 | Submit Leave Request | Employee |
-| UC-05 | Approve Leave Request | Department Manager |
-| UC-06 | Manage Payroll | HR / Finance |
-| UC-07 | Create Purchase Request | Employee / Department Manager |
-| UC-08 | Approve Purchase Request | Manager / Finance |
-| UC-09 | Manage Inventory | Inventory Manager |
-| UC-10 | Create Sales Order | Sales Manager |
-| UC-11 | Manage Projects | Project Manager |
-| UC-12 | Configure Workflow | Company Admin |
-| UC-13 | View Reports | Authorized Management |
-| UC-14 | Review Audit Logs | Authorized Administrator |
-
-### 8.2 Use Case Diagram
-
-```mermaid
-flowchart LR
-    Employee([Employee])
-    HR([HR Manager])
-    Finance([Finance Manager])
-    Procurement([Procurement Officer])
-    Inventory([Inventory Manager])
-    Manager([Department Manager])
-    Admin([Company Admin])
-    Executive([Executive])
-
-    subgraph NexusOS
-        Login[Authenticate User]
-        Profile[Manage Profile]
-        Leave[Submit Leave Request]
-        Attendance[Manage Attendance]
-        Employees[Manage Employees]
-        Payroll[Manage Payroll]
-        Budget[Manage Budget]
-        Purchase[Manage Purchase Requests]
-        Stock[Manage Inventory]
-        Sales[Manage Sales]
-        Workflow[Configure Workflows]
-        Reports[View Reports]
-        Audit[View Audit Logs]
-    end
-
-    Employee --> Login
-    Employee --> Profile
-    Employee --> Leave
-    Employee --> Attendance
-
-    HR --> Employees
-    HR --> Payroll
-    HR --> Attendance
-
-    Finance --> Budget
-    Finance --> Payroll
-    Finance --> Reports
-
-    Procurement --> Purchase
-    Inventory --> Stock
-
-    Manager --> Leave
-    Manager --> Purchase
-
-    Admin --> Workflow
-    Admin --> Audit
-
-    Executive --> Reports
-```
-
----
-
-## 9. Business Workflow Design
-
-### 9.1 Integrated Purchase Workflow
-
-The purchase workflow demonstrates how NexusOS connects multiple departments.
+### Core Platform Ecosystem
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[IT Department Creates Request]
-    B --> C[Department Manager Reviews]
-    C --> D{Approved?}
+    A["AgroAI Platform"]
 
-    D -->|No| E[Reject Request]
-    E --> Z([End])
+    A --> B["Farm Management"]
+    A --> C["Farmer Marketplace"]
+    A --> D["AI Decision Support"]
 
-    D -->|Yes| F[Finance Checks Budget]
-    F --> G{Budget Available?}
+    B --> B1["Farm Registration"]
+    B --> B2["Field Management"]
+    B --> B3["Farmer Assignment"]
+    B --> B4["Activity History"]
 
-    G -->|No| H[Request Budget Revision]
-    H --> Z
+    C --> C1["Job Advertisements"]
+    C --> C2["Applications"]
+    C --> C3["Recruitment"]
+    C --> C4["Private Chat"]
 
-    G -->|Yes| I[Finance Approval]
-    I --> J[Procurement Selects Supplier]
-    J --> K[Purchase Order Created]
-    K --> L[Goods Received]
-    L --> M[Inventory Updated]
-    M --> N[IT Assigns Assets]
-    N --> O[Finance Records Expense]
-    O --> P[Dashboard Updated]
-    P --> Z
+    D --> D1["Disease Detection"]
+    D --> D2["Soil Analysis"]
+    D --> D3["Irrigation Planning"]
+    D --> D4["Crop Recommendation"]
+    D --> D5["Yield Prediction"]
 ```
 
-### 9.2 Leave Approval Workflow
+---
+
+# ⚠️ 4. Problem Statement
+
+Agricultural operations often involve multiple manual processes and coordination challenges.
+
+### Identified Problems
+
+| Problem | Description |
+|---|---|
+| Manual Farm Management | Managing multiple farms and fields manually can be difficult. |
+| Worker Recruitment | Farm owners may struggle to find suitable agricultural workers. |
+| Assignment Management | Tracking which farmer works on which field can become complicated. |
+| Disease Identification | Early crop disease identification may be difficult without proper analysis. |
+| Soil Monitoring | Agricultural soil information may not be systematically recorded. |
+| Irrigation Decisions | Irrigation decisions may lack sufficient data-driven support. |
+| Historical Records | Worker activities, payments, and field history may be difficult to maintain. |
+
+### বাংলা ব্যাখ্যা
+
+বর্তমানে অনেক কৃষি কার্যক্রম ম্যানুয়ালি পরিচালিত হয়। একাধিক জমি, শ্রমিক, নিয়োগ, মাটির তথ্য এবং ফসলের রোগের তথ্য একসঙ্গে পরিচালনা করা কঠিন হতে পারে।
+
+AgroAI এই সমস্যাগুলোকে একটি কেন্দ্রীয় ডিজিটাল প্ল্যাটফর্মের মাধ্যমে সমাধানের লক্ষ্য নিয়ে তৈরি করা হচ্ছে।
+
+---
+
+# 💡 5. Proposed Solution
+
+AgroAI proposes a unified system containing:
+
+| Solution | Description |
+|---|---|
+| Digital Farm Management | Centralized farm and field management. |
+| Farmer Marketplace | Job advertisement and application management. |
+| Flexible Assignment | Multiple farmers can work on multiple fields. |
+| AI Disease Detection | Crop image analysis using computer vision. |
+| Soil Analysis | Machine-learning-based soil data analysis. |
+| Irrigation Planner | Data-driven irrigation recommendations. |
+| Historical Tracking | Store field, farmer, payment, and AI histories. |
+| Private Communication | Context-based conversations between relevant users. |
+
+---
+
+# 🎯 6. Project Objectives
+
+1. Develop a dynamic agricultural management platform.
+2. Implement user registration and authentication.
+3. Allow users to own and manage multiple farms.
+4. Support multiple fields under a single farm.
+5. Build a digital farmer recruitment marketplace.
+6. Implement flexible farmer-to-field assignment.
+7. Develop a farmer-specific workspace.
+8. Integrate AI-based disease detection.
+9. Implement soil analysis and irrigation planning.
+10. Maintain payment, review, and activity records.
+11. Apply Java Object-Oriented Programming principles.
+12. Build a modular and maintainable software architecture.
+
+---
+
+# 👥 7. Target Users and User Roles
+
+AgroAI supports three main user experiences.
+
+## 7.1 General User
+
+A general user can:
+
+- Register an account.
+- Log in.
+- Explore publicly listed farms.
+- Browse farmer job advertisements.
+- Apply for available jobs.
+- Register their own farm.
+- Become a farm owner.
+- Apply for agricultural work.
+
+A user is not restricted to a single activity. The same account may own multiple farms and also apply for work.
+
+## 7.2 Farm Owner
+
+A farm owner can:
+
+- Register a farm.
+- Manage multiple farms.
+- Create multiple fields.
+- Access independent farm dashboards.
+- Publish farmer job advertisements.
+- Review job applications.
+- Communicate with applicants.
+- Approve suitable applicants.
+- Assign farmers to selected fields.
+- Monitor field-level AI analysis.
+- Record payments and ratings.
+- View activity history.
+
+## 7.3 Farmer
+
+An approved and assigned farmer can:
+
+- Access their farmer workspace.
+- View only their assigned fields.
+- View permitted field information.
+- Upload crop images.
+- Submit soil telemetry.
+- Request AI analysis.
+- View AI results associated with their authorized fields.
+- Participate in authorized conversations.
+
+Farmers cannot access the full farm owner's dashboard unless separately authorized.
+
+### User Relationship Diagram
 
 ```mermaid
 flowchart TD
-    A([Employee Applies for Leave])
-    B[System Checks Leave Balance]
-    C{Eligible?}
-    D[Manager Reviews]
-    E{Approved?}
-    F[Reject Application]
-    G[Update Leave Balance]
-    H[Update Attendance]
-    I[Notify Employee]
+    U["Registered User"]
 
-    A --> B --> C
-    C -->|No| F
-    C -->|Yes| D --> E
-    E -->|No| F
-    E -->|Yes| G --> H --> I
-```
+    U --> O["Farm Owner Capability"]
+    U --> F["Farmer Capability"]
 
-### 9.3 Workflow Engine Execution Model
+    O --> R["Register Farm"]
+    O --> M["Manage Farms"]
+    O --> J["Publish Jobs"]
+    O --> A["Assign Farmers"]
 
-```mermaid
-flowchart LR
-    A[Business Event] --> B[Trigger Listener]
-    B --> C[Load Active Workflow]
-    C --> D[Evaluate Conditions]
-    D --> E{Condition Passed?}
-    E -->|No| F[Stop or Follow Alternate Path]
-    E -->|Yes| G[Execute Action]
-    G --> H{Approval Required?}
-    H -->|Yes| I[Create Approval Task]
-    H -->|No| J[Continue Workflow]
-    I --> K[Wait for Decision]
-    K --> J
-    J --> L[Write Execution Log]
-    L --> M([Completed])
+    F --> B["Browse Jobs"]
+    F --> C["Apply for Jobs"]
+    F --> D["Access Assigned Fields"]
+    F --> E["Submit Agricultural Data"]
+
+    R --> M
+    A --> D
 ```
 
 ---
 
-## 10. System Architecture
+# 🧩 8. System Features and Modules
 
-### 10.1 Architectural Approach
+## 8.1 Public Landing Page
 
-NexusOS will initially use a **Modular Monolith Architecture**.
+The landing page is the first page visitors see.
 
-A modular monolith keeps the application in one deployable backend while organizing business functionality into independent modules.
+Features:
 
-This approach is suitable for a university project because it:
+- Platform introduction.
+- General user registration.
+- Farm registration.
+- Login.
+- Explore farms.
+- Explore farmer jobs.
+- Information about AI capabilities.
 
-- Reduces deployment complexity.
-- Makes debugging easier.
-- Supports clear module boundaries.
-- Allows transactions across related business operations.
-- Can later be separated into services if required.
+## 8.2 User Authentication
 
-### 10.2 High-Level Architecture Diagram
+- User registration.
+- Login and logout.
+- Firebase Authentication integration.
+- Authenticated API access.
+- Role and resource-based authorization.
 
-```mermaid
-flowchart TB
-    U[Users]
-    FE[React + TypeScript Frontend]
-    AUTH[Firebase Authentication]
-    API[Spring Boot REST API]
+## 8.3 Farm Management
 
-    subgraph Backend Modules
-        ORG[Organization Module]
-        HR[HR Module]
-        ATT[Attendance Module]
-        FIN[Finance Module]
-        INV[Inventory Module]
-        PROC[Procurement Module]
-        CRM[CRM Module]
-        SALES[Sales Module]
-        PM[Project Module]
-        WF[Workflow Engine]
-        REP[Reporting Module]
-        AUD[Audit Module]
-    end
+Every authenticated user can register a farm.
 
-    DB[(Supabase PostgreSQL)]
-    STORAGE[(Supabase Storage)]
-    NOTIFY[Notification Services]
+Farm information includes:
 
-    U --> FE
-    FE --> AUTH
-    FE --> API
-    AUTH --> FE
-    FE -->|Firebase ID Token| API
+- Farm name.
+- Description.
+- Location.
+- Farm image.
+- Farm size.
+- Agricultural category.
+- Public visibility preference.
+- Owner information.
 
-    API --> ORG
-    API --> HR
-    API --> ATT
-    API --> FIN
-    API --> INV
-    API --> PROC
-    API --> CRM
-    API --> SALES
-    API --> PM
-    API --> WF
-    API --> REP
-    API --> AUD
+After successful registration, the creator becomes the owner of that farm.
 
-    ORG --> DB
-    HR --> DB
-    ATT --> DB
-    FIN --> DB
-    INV --> DB
-    PROC --> DB
-    CRM --> DB
-    SALES --> DB
-    PM --> DB
-    WF --> DB
-    REP --> DB
-    AUD --> DB
+A user may own multiple farms.
 
-    API --> STORAGE
-    API --> NOTIFY
-```
+## 8.4 Field Management
 
-### 10.3 Request Lifecycle
+Each farm may contain multiple fields.
 
-1. User opens the React application.
-2. Firebase Authentication authenticates the user.
-3. Frontend receives an identity token.
-4. Frontend sends the token with an API request.
-5. Spring Security verifies the token.
-6. Backend identifies the user and checks organizational scope.
-7. The relevant business module processes the request.
-8. PostgreSQL stores or retrieves authorized business data.
-9. The backend returns the response.
-10. The frontend updates the interface.
+Field information includes:
 
-### 10.4 Component Diagram
+- Field name.
+- Field location.
+- Field area.
+- Soil type.
+- Crop information.
+- Current agricultural status.
+- Assigned farmers.
+- Field history.
 
-```mermaid
-flowchart TB
-    subgraph Frontend
-        UI[User Interface]
-        ROUTER[Application Router]
-        STATE[State Management]
-        API_CLIENT[API Client]
-    end
+Every field has its own dashboard.
 
-    subgraph Backend
-        SECURITY[Security Layer]
-        CONTROLLER[REST Controllers]
-        SERVICE[Business Services]
-        REPOSITORY[Repositories]
-        ENGINE[Workflow Engine]
-        EVENT[Event Handler]
-    end
+## 8.5 Farmer Marketplace
 
-    subgraph Infrastructure
-        POSTGRES[(PostgreSQL)]
-        FILES[(Object Storage)]
-        FIREBASE[Firebase Authentication]
-    end
+Farm owners can publish recruitment advertisements.
 
-    UI --> ROUTER
-    ROUTER --> STATE
-    STATE --> API_CLIENT
-    API_CLIENT --> SECURITY
-    SECURITY --> FIREBASE
-    SECURITY --> CONTROLLER
-    CONTROLLER --> SERVICE
-    SERVICE --> REPOSITORY
-    SERVICE --> ENGINE
-    ENGINE --> EVENT
-    REPOSITORY --> POSTGRES
-    SERVICE --> FILES
-```
+Job information includes:
 
----
+- Job title.
+- Farm information.
+- Job description.
+- Required experience.
+- Work location.
+- Payment information.
+- Vacancy count.
+- Job status.
 
-## 11. Sequence Diagrams
+General users can explore and apply for available jobs.
 
-### 11.1 User Login and API Authentication
+## 8.6 Application Management
 
-```mermaid
-sequenceDiagram
-    actor User
-    participant UI as React Frontend
-    participant Firebase
-    participant API as Spring Boot API
-    participant DB as PostgreSQL
-
-    User->>UI: Enter Login Credentials
-    UI->>Firebase: Authenticate
-    Firebase-->>UI: Firebase ID Token
-    UI->>API: Request + Bearer Token
-    API->>Firebase: Verify Token
-    Firebase-->>API: Verified Identity
-    API->>DB: Load User and Permissions
-    DB-->>API: User Context
-    API-->>UI: Authorized Response
-    UI-->>User: Display Dashboard
-```
-
-### 11.2 Leave Approval
-
-```mermaid
-sequenceDiagram
-    actor Employee
-    participant UI as Frontend
-    participant API as Backend
-    participant HR as HR Service
-    participant WF as Workflow Engine
-    participant DB as Database
-    actor Manager
-
-    Employee->>UI: Submit Leave Request
-    UI->>API: POST /api/v1/leave-requests
-    API->>HR: Validate Request
-    HR->>DB: Check Leave Balance
-    DB-->>HR: Balance Information
-    HR->>DB: Save Pending Request
-    HR->>WF: Publish LeaveSubmitted Event
-    WF->>DB: Create Approval Task
-    WF-->>Manager: Send Notification
-    Manager->>UI: Review Request
-    UI->>API: Approve Request
-    API->>WF: Process Approval
-    WF->>DB: Update Request Status
-    WF->>HR: Update Leave Balance
-    HR->>DB: Update Attendance
-    API-->>Employee: Approval Result
-```
-
-### 11.3 Purchase Request
-
-```mermaid
-sequenceDiagram
-    actor Employee
-    participant API as Backend API
-    participant Procurement
-    participant Workflow
-    participant Finance
-    participant Inventory
-    participant DB as PostgreSQL
-
-    Employee->>API: Create Purchase Request
-    API->>Procurement: Validate Request
-    Procurement->>DB: Save Request
-    Procurement->>Workflow: Start Approval Workflow
-    Workflow->>Finance: Request Budget Approval
-    Finance->>DB: Check Budget
-    Finance-->>Workflow: Budget Decision
-    Workflow->>Procurement: Continue Approved Request
-    Procurement->>DB: Create Purchase Order
-    Procurement->>Inventory: Notify Goods Received
-    Inventory->>DB: Update Stock
-    DB-->>API: Transaction Results
-    API-->>Employee: Request Status
-```
-
----
-
-## 12. Class Diagram
-
-The following diagram shows a simplified object-oriented domain model.
-
-```mermaid
-classDiagram
-    class Organization {
-        +UUID id
-        +String name
-        +String registrationNumber
-    }
-
-    class Branch {
-        +UUID id
-        +String name
-        +String address
-    }
-
-    class Department {
-        +UUID id
-        +String name
-    }
-
-    class User {
-        +UUID id
-        +String firebaseUid
-        +String email
-        +String status
-    }
-
-    class Employee {
-        +UUID id
-        +String employeeCode
-        +String designation
-        +Date joiningDate
-    }
-
-    class Role {
-        +UUID id
-        +String name
-    }
-
-    class Permission {
-        +UUID id
-        +String permissionKey
-    }
-
-    class LeaveRequest {
-        +UUID id
-        +Date startDate
-        +Date endDate
-        +String status
-        +submit()
-        +approve()
-        +reject()
-    }
-
-    class PurchaseRequest {
-        +UUID id
-        +String description
-        +Decimal estimatedCost
-        +String status
-        +submit()
-        +approve()
-    }
-
-    class Workflow {
-        +UUID id
-        +String name
-        +String version
-        +String status
-        +execute()
-    }
-
-    class WorkflowExecution {
-        +UUID id
-        +String status
-        +Date startedAt
-        +Date completedAt
-    }
-
-    class Product {
-        +UUID id
-        +String sku
-        +String name
-    }
-
-    class StockMovement {
-        +UUID id
-        +String movementType
-        +Decimal quantity
-    }
-
-    class FinancialTransaction {
-        +UUID id
-        +String transactionType
-        +Decimal amount
-    }
-
-    Organization "1" --> "*" Branch
-    Organization "1" --> "*" User
-    Branch "1" --> "*" Department
-    Department "1" --> "*" Employee
-    User "1" --> "0..1" Employee
-    User "*" --> "*" Role
-    Role "*" --> "*" Permission
-    Employee "1" --> "*" LeaveRequest
-    Employee "1" --> "*" PurchaseRequest
-    Workflow "1" --> "*" WorkflowExecution
-    Product "1" --> "*" StockMovement
-    Organization "1" --> "*" FinancialTransaction
-```
-
----
-
-## 13. Workflow State Diagram
-
-A workflow instance moves through controlled states.
+Application lifecycle:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Draft
-    Draft --> Active: Publish
-    Active --> Running: Trigger Received
-    Running --> WaitingApproval: Approval Required
-    WaitingApproval --> Running: Approved
-    WaitingApproval --> Rejected: Rejected
-    Running --> Completed: All Steps Successful
-    Running --> Failed: Execution Error
-    Failed --> Running: Retry
-    Failed --> Cancelled: Cancel
-    Draft --> Cancelled: Cancel
-    Completed --> [*]
-    Rejected --> [*]
-    Cancelled --> [*]
+    [*] --> PENDING
+    PENDING --> UNDER_REVIEW
+    UNDER_REVIEW --> APPROVED
+    UNDER_REVIEW --> REJECTED
+    APPROVED --> ASSIGNED
+    APPROVED --> CLOSED
+    REJECTED --> [*]
+    ASSIGNED --> [*]
 ```
 
-### 13.1 Business Request Statuses
+An approved applicant is not automatically assigned to every field.
 
-Common request statuses:
+The farm owner selects the appropriate field or fields.
 
-- Draft
-- Submitted
-- Pending Approval
-- Approved
-- Rejected
-- Processing
-- Completed
-- Cancelled
+## 8.7 Field Dashboard
 
-Every status transition must be validated by the backend.
+Each field dashboard contains:
+
+1. AI Analysis
+2. Disease Detection
+3. Irrigation Planner
+4. History & Logs
+5. Soil Telemetry
+6. Assigned Farmers
+
+## 8.8 Farmer Workspace
+
+Farmers see only fields assigned to them.
+
+Features:
+
+- Assigned field list.
+- Field-specific details.
+- Crop image upload.
+- Soil telemetry submission.
+- AI result history.
+- Relevant communication.
+
+## 8.9 Live Chat
+
+The platform supports private conversations related to:
+
+- Job applications.
+- Farm-related communication.
+- Existing work assignments.
+
+Chat access must be checked on the backend.
+
+## 8.10 Payment and Rating Management
+
+Farm owners can maintain records of:
+
+- Farmer payments.
+- Payment amounts.
+- Payment status.
+- Payment reference.
+- Assignment completion.
+- Farmer ratings.
+- Work feedback.
+
+A manually recorded payment is not proof that money was actually transferred.
+
+## 8.11 History and Activity Logs
+
+The system maintains records of:
+
+- Farm creation.
+- Field creation.
+- Farmer assignments.
+- Assignment releases.
+- Job applications.
+- AI submissions.
+- AI results.
+- Payments.
+- Reviews.
 
 ---
 
-## 14. Entity Relationship Diagram (ERD)
+# 🏗️ 9. System Architecture
 
-The following ERD represents a simplified database design. The production database may include additional tables, indexes, constraints, and junction entities.
+AgroAI uses a modular architecture with a Java Spring Boot application as the main backend and a separate Python AI service.
+
+### High-Level Architecture
+
+```mermaid
+flowchart TB
+    U["Users: Owner / Farmer / General User"]
+
+    FE["React + TypeScript + Tailwind CSS"]
+
+    BE["Spring Boot Main Backend"]
+
+    AUTH["Firebase Authentication"]
+    DB["Firebase Firestore"]
+    IMG["Cloudinary Image Storage"]
+
+    AI["Python FastAPI AI Service"]
+
+    DL["PyTorch / CNN / EfficientNet"]
+    ML["Scikit-learn / XGBoost"]
+    XAI["SHAP / Explainable AI"]
+
+    U --> FE
+    FE --> BE
+
+    FE -. "Authentication" .-> AUTH
+    BE --> AUTH
+
+    BE --> DB
+    BE --> IMG
+
+    BE --> AI
+
+    AI --> DL
+    AI --> ML
+    AI --> XAI
+
+    AI --> BE
+    BE --> FE
+```
+
+### Architecture Explanation
+
+| Layer | Responsibility |
+|---|---|
+| Presentation Layer | User interface and dashboards. |
+| Application Layer | REST API and business logic. |
+| Security Layer | Authentication verification and authorization. |
+| Persistence Layer | Firestore data management. |
+| Media Layer | Cloudinary image storage. |
+| AI Layer | Python-based AI processing. |
+
+### Important Design Principle
+
+Spring Boot remains the primary backend responsible for business operations, permissions, and application workflows.
+
+Python FastAPI is a dedicated AI service.
+
+The frontend should not directly access privileged Firestore or Cloudinary credentials.
+
+---
+
+# 💻 10. Technology Stack
+
+## Frontend
+
+| Technology | Purpose |
+|---|---|
+| React | UI development |
+| TypeScript | Type safety |
+| Tailwind CSS | Styling |
+| React Router | Navigation |
+| Fetch API / Axios | API communication |
+
+## Backend
+
+| Technology | Purpose |
+|---|---|
+| Java 21 | Main programming language |
+| Spring Boot 3.x | Backend framework |
+| Spring Web | REST APIs |
+| Spring Security | Security |
+| Firebase Admin SDK | Firebase integration |
+| Springdoc OpenAPI | API documentation |
+| WebSocket | Real-time chat |
+
+## Database and Storage
+
+| Technology | Purpose |
+|---|---|
+| Firebase Firestore | Application database |
+| Firebase Authentication | User authentication |
+| Cloudinary | Image storage |
+
+## AI and Machine Learning
+
+| Technology | Purpose |
+|---|---|
+| Python | AI programming |
+| FastAPI | AI service API |
+| PyTorch | Deep learning |
+| CNN | Image classification |
+| EfficientNet | Image classification architecture |
+| Scikit-learn | Machine learning |
+| XGBoost | Predictive modeling |
+| OpenCV | Image processing |
+| Pillow | Image handling |
+| NumPy | Numerical processing |
+| Pandas | Data analysis |
+| SHAP | Explainable AI |
+
+## Testing and Development
+
+| Technology | Purpose |
+|---|---|
+| JUnit 5 | Java unit testing |
+| Mockito | Mock testing |
+| Pytest | Python testing |
+| Postman | API testing |
+| Git | Version control |
+| GitHub | Collaboration |
+
+---
+
+# 📋 11. Software Requirements Specification (SRS)
+
+## 11.1 Introduction
+
+### Purpose
+
+This SRS document defines the functional and non-functional requirements of AgroAI.
+
+It describes system behavior, user roles, major modules, architectural requirements, and technical constraints.
+
+### Scope
+
+AgroAI is designed to provide:
+
+- Digital agricultural management.
+- Farmer recruitment.
+- Field assignment.
+- Agricultural data collection.
+- AI-based decision support.
+- Payment and rating records.
+- Historical activity tracking.
+
+### Intended Audience
+
+- Project supervisor.
+- University evaluators.
+- Developers.
+- Testers.
+- Project stakeholders.
+
+## 11.2 Product Perspective
+
+AgroAI is a web-based software platform with multiple integrated services.
+
+It consists of:
+
+1. Web frontend.
+2. Java Spring Boot backend.
+3. Firebase services.
+4. Cloud-based image storage.
+5. Python AI microservice.
+
+## 11.3 Product Functions
+
+The system provides:
+
+- User registration and login.
+- Farm registration.
+- Farm and field management.
+- Job advertisement.
+- Job applications.
+- Farmer assignment.
+- Field monitoring.
+- Crop image submission.
+- Disease detection.
+- Soil analysis.
+- Irrigation planning.
+- Chat.
+- Payment records.
+- Ratings and reviews.
+- Activity history.
+
+## 11.4 Operating Environment
+
+| Component | Environment |
+|---|---|
+| Frontend | Modern web browsers |
+| Backend | Java 21 runtime |
+| AI Service | Python runtime |
+| Database | Firebase Cloud Firestore |
+| Image Storage | Cloudinary |
+| Development OS | Windows / Linux / macOS |
+| Network | Internet connection |
+
+## 11.5 User Characteristics
+
+| User | Expected Capability |
+|---|---|
+| General User | Basic web application knowledge |
+| Farm Owner | Farm and worker management |
+| Farmer | Basic digital interaction and data submission |
+| Administrator | Platform-level maintenance, if implemented |
+
+## 11.6 Assumptions and Dependencies
+
+- Users have internet access.
+- Firebase services are available.
+- Cloudinary account and storage limits permit uploads.
+- AI models are available for inference.
+- Farm owners provide accurate farm and field information.
+- Agricultural recommendations depend on the quality of input data.
+- Third-party services may have usage limits.
+
+---
+
+# ⚙️ 12. Functional Requirements
+
+Functional requirements describe what the system must do.
+
+| ID | Requirement | Priority |
+|---|---|---|
+| FR-01 | Users can register accounts. | High |
+| FR-02 | Users can authenticate and log in. | High |
+| FR-03 | Authenticated users can register farms. | High |
+| FR-04 | A user can own multiple farms. | High |
+| FR-05 | Farm owners can create multiple fields. | High |
+| FR-06 | Farm owners can edit and manage their farms. | High |
+| FR-07 | Public users can browse public farms. | Medium |
+| FR-08 | Farm owners can publish job advertisements. | High |
+| FR-09 | Users can apply for farmer jobs. | High |
+| FR-10 | Farm owners can review applications. | High |
+| FR-11 | Owners can approve or reject applications. | High |
+| FR-12 | Owners can assign farmers to fields. | High |
+| FR-13 | Multiple farmers can work on one field. | High |
+| FR-14 | One farmer can work on multiple fields. | High |
+| FR-15 | Farmers can access only authorized fields. | High |
+| FR-16 | Farmers can upload crop images. | High |
+| FR-17 | Farmers can submit soil telemetry. | High |
+| FR-18 | The system can request AI analysis. | High |
+| FR-19 | AI results are linked to submissions and fields. | High |
+| FR-20 | The system maintains AI processing statuses. | High |
+| FR-21 | Owners can release or reassign farmers. | High |
+| FR-22 | Owners can record payments. | Medium |
+| FR-23 | Owners can provide farmer ratings. | Medium |
+| FR-24 | Authorized users can communicate privately. | Medium |
+| FR-25 | The system maintains activity history. | High |
+| FR-26 | Owners can configure farm visibility. | Medium |
+
+---
+
+# 🛡️ 13. Non-Functional Requirements
+
+| ID | Requirement | Description |
+|---|---|---|
+| NFR-01 | Security | Protect private farm and user information. |
+| NFR-02 | Performance | Avoid unnecessary API requests and expensive database reads. |
+| NFR-03 | Scalability | Support additional farms, fields, users, and AI modules. |
+| NFR-04 | Reliability | Handle failed API requests and AI processing errors. |
+| NFR-05 | Maintainability | Use modular and reusable code. |
+| NFR-06 | Usability | Provide clear and accessible interfaces. |
+| NFR-07 | Compatibility | Support modern browsers. |
+| NFR-08 | Data Integrity | Maintain consistent assignments and historical records. |
+| NFR-09 | Privacy | Restrict access to private conversations and field information. |
+| NFR-10 | Availability | Handle temporary third-party service failures gracefully. |
+| NFR-11 | Testability | Implement unit, integration, and API tests. |
+| NFR-12 | Observability | Record errors and relevant application events. |
+
+---
+
+# 📌 14. Use Case Diagram
+
+```mermaid
+flowchart TB
+    G["General User"]
+    O["Farm Owner"]
+    F["Farmer"]
+
+    subgraph AgroAI["AgroAI Platform"]
+        UC1(("Register / Login"))
+        UC2(("Explore Public Farms"))
+        UC3(("Browse Jobs"))
+        UC4(("Apply for Job"))
+
+        UC5(("Register Farm"))
+        UC6(("Manage Farm"))
+        UC7(("Manage Fields"))
+        UC8(("Publish Job"))
+        UC9(("Review Applications"))
+        UC10(("Assign Farmers"))
+        UC11(("Manage Payments"))
+        UC12(("View Farm History"))
+
+        UC13(("View Assigned Fields"))
+        UC14(("Upload Crop Image"))
+        UC15(("Submit Soil Data"))
+        UC16(("Request AI Analysis"))
+        UC17(("View AI Results"))
+
+        UC18(("Private Chat"))
+    end
+
+    G --> UC1
+    G --> UC2
+    G --> UC3
+    G --> UC4
+
+    O --> UC1
+    O --> UC5
+    O --> UC6
+    O --> UC7
+    O --> UC8
+    O --> UC9
+    O --> UC10
+    O --> UC11
+    O --> UC12
+    O --> UC18
+
+    F --> UC1
+    F --> UC13
+    F --> UC14
+    F --> UC15
+    F --> UC16
+    F --> UC17
+    F --> UC18
+```
+
+### Use Case Description: Register Farm
+
+| Attribute | Description |
+|---|---|
+| Use Case ID | UC-01 |
+| Actor | Authenticated User |
+| Preconditions | User must be authenticated. |
+| Main Flow | User opens farm registration, enters details, submits the form, and receives confirmation. |
+| Postcondition | Farm is created and the user becomes its owner. |
+| Alternative Flow | Invalid data or database failure returns an appropriate error. |
+
+### Use Case Description: Apply for a Job
+
+| Attribute | Description |
+|---|---|
+| Use Case ID | UC-02 |
+| Actor | General User |
+| Preconditions | User is authenticated and the job is open. |
+| Main Flow | User views job details and submits an application. |
+| Postcondition | Application is stored with PENDING status. |
+| Alternative Flow | Duplicate or closed-job applications are rejected. |
+
+### Use Case Description: Upload Crop Image
+
+| Attribute | Description |
+|---|---|
+| Use Case ID | UC-03 |
+| Actor | Assigned Farmer |
+| Preconditions | Farmer has an active assignment to the relevant field. |
+| Main Flow | Farmer selects a field, uploads an image, and requests disease detection. |
+| Postcondition | Submission is stored and AI processing begins. |
+| Alternative Flow | Invalid image or unauthorized field access is rejected. |
+
+---
+
+# 🧱 15. UML Class Diagram
+
+The following conceptual UML model represents the core domain relationships. Actual Java classes may be divided into entities, DTOs, services, repositories, and security components.
+
+```mermaid
+classDiagram
+
+class User {
+  +String id
+  +String fullName
+  +String email
+  +String phone
+  +String accountStatus
+  +register()
+  +updateProfile()
+}
+
+class Farm {
+  +String id
+  +String name
+  +String description
+  +String location
+  +Boolean isPublic
+  +createFarm()
+  +updateFarm()
+}
+
+class Field {
+  +String id
+  +String name
+  +Double area
+  +String soilType
+  +String cropType
+  +String status
+  +updateField()
+}
+
+class JobPost {
+  +String id
+  +String title
+  +String description
+  +Double paymentRate
+  +String status
+  +publishJob()
+  +closeJob()
+}
+
+class JobApplication {
+  +String id
+  +String applicantId
+  +String status
+  +Date appliedAt
+  +submitApplication()
+  +updateStatus()
+}
+
+class FieldAssignment {
+  +String id
+  +String farmerId
+  +String fieldId
+  +Date startDate
+  +Date endDate
+  +String status
+  +assignFarmer()
+  +releaseFarmer()
+}
+
+class SoilTelemetry {
+  +String id
+  +Double moisture
+  +Double temperature
+  +Double ph
+  +Date recordedAt
+  +submitTelemetry()
+}
+
+class AIAnalysis {
+  +String id
+  +String analysisType
+  +String status
+  +String result
+  +Double confidence
+  +processAnalysis()
+}
+
+class Payment {
+  +String id
+  +Double amount
+  +String status
+  +String reference
+  +Date paymentDate
+  +recordPayment()
+}
+
+class FarmerReview {
+  +String id
+  +Integer rating
+  +String feedback
+  +Date createdAt
+  +submitReview()
+}
+
+User "1" --> "0..*" Farm : owns
+Farm "1" *-- "1..*" Field : contains
+Farm "1" --> "0..*" JobPost : publishes
+JobPost "1" --> "0..*" JobApplication : receives
+User "1" --> "0..*" JobApplication : submits
+User "1" --> "0..*" FieldAssignment : farmer
+Field "1" --> "0..*" FieldAssignment : assignments
+Field "1" --> "0..*" SoilTelemetry : records
+Field "1" --> "0..*" AIAnalysis : analyses
+FieldAssignment "1" --> "0..*" Payment : payment history
+FieldAssignment "1" --> "0..*" FarmerReview : reviews
+```
+
+---
+
+# 🗂️ 16. Entity Relationship and Firestore Data Design
+
+AgroAI uses Firebase Firestore, which is a NoSQL document database.
+
+The following diagram shows logical relationships, not SQL foreign-key constraints.
 
 ```mermaid
 erDiagram
-    ORGANIZATIONS ||--o{ BRANCHES : contains
-    ORGANIZATIONS ||--o{ USERS : owns
-    ORGANIZATIONS ||--o{ WORKFLOWS : defines
-    BRANCHES ||--o{ DEPARTMENTS : contains
-    DEPARTMENTS ||--o{ EMPLOYEES : employs
-    USERS ||--o| EMPLOYEES : linked_to
-    USERS ||--o{ USER_ROLES : assigned
-    ROLES ||--o{ USER_ROLES : includes
-    ROLES ||--o{ ROLE_PERMISSIONS : grants
-    PERMISSIONS ||--o{ ROLE_PERMISSIONS : assigned
 
-    EMPLOYEES ||--o{ ATTENDANCE_RECORDS : has
-    EMPLOYEES ||--o{ LEAVE_REQUESTS : submits
-    EMPLOYEES ||--o{ PAYROLL_RECORDS : receives
+    USERS ||--o{ FARMS : owns
+    FARMS ||--o{ FIELDS : contains
 
-    ORGANIZATIONS ||--o{ PRODUCTS : owns
-    PRODUCTS ||--o{ STOCK_MOVEMENTS : tracks
-    BRANCHES ||--o{ STOCK_MOVEMENTS : records
+    FARMS ||--o{ JOB_POSTS : publishes
+    JOB_POSTS ||--o{ JOB_APPLICATIONS : receives
+    USERS ||--o{ JOB_APPLICATIONS : submits
 
-    SUPPLIERS ||--o{ PURCHASE_ORDERS : receives
-    PURCHASE_REQUESTS ||--o{ PURCHASE_ORDERS : generates
-    PURCHASE_ORDERS ||--o{ PURCHASE_ORDER_ITEMS : contains
-    PRODUCTS ||--o{ PURCHASE_ORDER_ITEMS : ordered
+    USERS ||--o{ FIELD_ASSIGNMENTS : works
+    FIELDS ||--o{ FIELD_ASSIGNMENTS : receives
 
-    CUSTOMERS ||--o{ SALES_ORDERS : places
-    SALES_ORDERS ||--o{ SALES_ORDER_ITEMS : contains
-    PRODUCTS ||--o{ SALES_ORDER_ITEMS : sold
+    FIELDS ||--o{ SOIL_TELEMETRY : stores
+    FIELDS ||--o{ FIELD_IMAGES : stores
+    FIELDS ||--o{ AI_SUBMISSIONS : receives
+    AI_SUBMISSIONS ||--o{ AI_RESULTS : generates
 
-    ORGANIZATIONS ||--o{ FINANCIAL_TRANSACTIONS : records
-    ORGANIZATIONS ||--o{ AUDIT_LOGS : tracks
+    FIELD_ASSIGNMENTS ||--o{ PAYMENTS : records
+    FIELD_ASSIGNMENTS ||--o{ FARMER_REVIEWS : receives
 
-    WORKFLOWS ||--o{ WORKFLOW_EXECUTIONS : executes
-    WORKFLOW_EXECUTIONS ||--o{ WORKFLOW_TASKS : contains
-
-    ORGANIZATIONS {
-        uuid id PK
-        string name
-        string status
-        timestamp created_at
-    }
-
-    BRANCHES {
-        uuid id PK
-        uuid organization_id FK
-        string name
-        string address
-    }
-
-    DEPARTMENTS {
-        uuid id PK
-        uuid branch_id FK
-        string name
-    }
-
-    USERS {
-        uuid id PK
-        uuid organization_id FK
-        string firebase_uid
-        string email
-        string status
-    }
-
-    EMPLOYEES {
-        uuid id PK
-        uuid user_id FK
-        uuid department_id FK
-        string employee_code
-        string designation
-    }
-
-    ROLES {
-        uuid id PK
-        string name
-    }
-
-    PERMISSIONS {
-        uuid id PK
-        string permission_key
-    }
-
-    USER_ROLES {
-        uuid user_id FK
-        uuid role_id FK
-    }
-
-    ROLE_PERMISSIONS {
-        uuid role_id FK
-        uuid permission_id FK
-    }
-
-    ATTENDANCE_RECORDS {
-        uuid id PK
-        uuid employee_id FK
-        date attendance_date
-        timestamp check_in
-        timestamp check_out
-    }
-
-    LEAVE_REQUESTS {
-        uuid id PK
-        uuid employee_id FK
-        date start_date
-        date end_date
-        string status
-    }
-
-    PAYROLL_RECORDS {
-        uuid id PK
-        uuid employee_id FK
-        decimal gross_salary
-        decimal deductions
-        decimal net_salary
-    }
-
-    PRODUCTS {
-        uuid id PK
-        uuid organization_id FK
-        string sku
-        string name
-    }
-
-    STOCK_MOVEMENTS {
-        uuid id PK
-        uuid product_id FK
-        uuid branch_id FK
-        string movement_type
-        decimal quantity
-    }
-
-    SUPPLIERS {
-        uuid id PK
-        string name
-        string contact
-    }
-
-    PURCHASE_REQUESTS {
-        uuid id PK
-        uuid organization_id FK
-        string status
-        decimal estimated_cost
-    }
-
-    PURCHASE_ORDERS {
-        uuid id PK
-        uuid supplier_id FK
-        uuid purchase_request_id FK
-        string status
-    }
-
-    PURCHASE_ORDER_ITEMS {
-        uuid id PK
-        uuid purchase_order_id FK
-        uuid product_id FK
-        decimal quantity
-    }
-
-    CUSTOMERS {
-        uuid id PK
-        uuid organization_id FK
-        string name
-        string email
-    }
-
-    SALES_ORDERS {
-        uuid id PK
-        uuid customer_id FK
-        string status
-        decimal total_amount
-    }
-
-    SALES_ORDER_ITEMS {
-        uuid id PK
-        uuid sales_order_id FK
-        uuid product_id FK
-        decimal quantity
-    }
-
-    FINANCIAL_TRANSACTIONS {
-        uuid id PK
-        uuid organization_id FK
-        string transaction_type
-        decimal amount
-        timestamp transaction_date
-    }
-
-    WORKFLOWS {
-        uuid id PK
-        uuid organization_id FK
-        string name
-        string version
-        string status
-    }
-
-    WORKFLOW_EXECUTIONS {
-        uuid id PK
-        uuid workflow_id FK
-        string status
-        timestamp started_at
-    }
-
-    WORKFLOW_TASKS {
-        uuid id PK
-        uuid execution_id FK
-        string task_type
-        string status
-    }
-
-    AUDIT_LOGS {
-        uuid id PK
-        uuid organization_id FK
-        uuid actor_user_id
-        string action
-        string entity_type
-        timestamp created_at
-    }
+    CONVERSATIONS ||--o{ MESSAGES : contains
+    USERS ||--o{ ACTIVITY_LOGS : generates
 ```
 
-### 14.1 Database Design Principles
+### Firestore Design Principles
 
-- Use UUID primary keys.
-- Use foreign keys to maintain relationships.
-- Use appropriate indexes for frequently queried fields.
-- Store timestamps consistently in UTC.
-- Use database transactions for related operations.
-- Use decimal types for monetary values.
-- Avoid deleting financial records that must be retained for audit purposes.
-- Use soft deletion only where appropriate.
-- Keep organization identifiers on tenant-owned records.
-- Validate organizational ownership on every protected operation.
+- Use document IDs for unique record identification.
+- Store references to related documents.
+- Use subcollections where hierarchical data makes sense.
+- Avoid excessively large documents.
+- Design queries around real application access patterns.
+- Use Firestore indexes for compound queries.
+- Maintain historical records instead of deleting important operational history.
+- Use server-side validation and authorization.
 
-### 14.2 Multi-Tenant Data Isolation
+---
 
-Every tenant-owned record must be associated with an organization.
+# 🗄️ 17. Database Collection Structure
 
-For example:
+| Collection | Main Fields |
+|---|---|
+| users | uid, fullName, email, phone, status |
+| farms | farmId, ownerId, name, location, isPublic |
+| fields | fieldId, farmId, name, area, soilType, cropType |
+| fieldAssignments | assignmentId, farmerId, fieldId, status, startDate, endDate |
+| jobPosts | jobId, farmId, title, description, paymentRate, status |
+| jobApplications | applicationId, jobId, applicantId, status |
+| conversations | conversationId, contextType, contextId, participantIds |
+| messages | messageId, conversationId, senderId, message, createdAt |
+| soilTelemetry | telemetryId, fieldId, moisture, temperature, ph |
+| fieldImages | imageId, fieldId, farmerId, imageUrl, uploadedAt |
+| aiSubmissions | submissionId, fieldId, submittedBy, type, status |
+| aiResults | resultId, submissionId, fieldId, prediction, confidence |
+| irrigationPlans | planId, fieldId, recommendation, createdAt |
+| payments | paymentId, assignmentId, amount, status, reference |
+| farmerReviews | reviewId, assignmentId, farmerId, rating, feedback |
+| activityLogs | logId, actorId, action, resourceId, createdAt |
+
+### Example: Farm Document
+
+```json
+{
+  "farmId": "farm_001",
+  "ownerId": "user_001",
+  "name": "Green Valley Farm",
+  "description": "A modern agricultural farm",
+  "location": {
+    "latitude": 24.0,
+    "longitude": 90.0,
+    "address": "Example Location"
+  },
+  "isPublic": true,
+  "createdAt": "SERVER_TIMESTAMP",
+  "updatedAt": "SERVER_TIMESTAMP"
+}
+```
+
+### Example: Field Assignment Document
+
+```json
+{
+  "assignmentId": "assignment_001",
+  "farmerId": "user_002",
+  "fieldId": "field_001",
+  "farmId": "farm_001",
+  "status": "ACTIVE",
+  "startDate": "SERVER_TIMESTAMP",
+  "endDate": null,
+  "createdBy": "user_001"
+}
+```
+
+### Example: AI Submission Document
+
+```json
+{
+  "submissionId": "submission_001",
+  "fieldId": "field_001",
+  "farmId": "farm_001",
+  "submittedBy": "user_002",
+  "submissionType": "DISEASE_DETECTION",
+  "imageUrl": "CLOUDINARY_IMAGE_URL",
+  "status": "PENDING",
+  "createdAt": "SERVER_TIMESTAMP"
+}
+```
+
+---
+
+# 🤖 18. AI Architecture and Workflow
+
+AgroAI uses Python-based machine-learning services separately from the main Java backend.
+
+## 18.1 AI Features
+
+| Feature | Technology | Purpose |
+|---|---|---|
+| Disease Detection | PyTorch + CNN | Identify possible crop diseases from images. |
+| Image Processing | OpenCV + Pillow | Prepare images for inference. |
+| Soil Analysis | Scikit-learn | Analyze soil measurements. |
+| Irrigation Planning | XGBoost / Scikit-learn | Generate irrigation recommendations. |
+| Crop Recommendation | Random Forest / XGBoost | Recommend suitable crops. |
+| Yield Prediction | XGBoost | Estimate potential production. |
+| Explainable AI | SHAP | Explain influential prediction factors. |
+
+## 18.2 AI Processing Workflow
+
+```mermaid
+flowchart TD
+
+    A["Farmer Uploads Image / Soil Data"]
+
+    B["Spring Boot Validates User and Field Permission"]
+
+    C["Create AI Submission in Firestore"]
+
+    D["Submission Status: PENDING"]
+
+    E["Store Image in Cloudinary"]
+
+    F["Send Input to Python FastAPI"]
+
+    G["Preprocessing"]
+
+    H["AI Model Inference"]
+
+    I["Generate Prediction"]
+
+    J["Evaluate Output"]
+
+    K["Store AI Result in Firestore"]
+
+    L["Submission Status: COMPLETED"]
+
+    M["Display Result in Field Dashboard"]
+
+    N["Handle Processing Error"]
+
+    O["Submission Status: FAILED"]
+
+    A --> B --> C --> D
+    D --> E
+    E --> F --> G --> H --> I --> J --> K --> L --> M
+
+    F -. "Processing Failure" .-> N
+    H -. "Model Failure" .-> N
+    N --> O
+```
+
+## 18.3 AI Submission Status
+
+| Status | Meaning |
+|---|---|
+| PENDING | Submission has been created. |
+| PROCESSING | AI analysis is running. |
+| COMPLETED | Analysis has completed successfully. |
+| FAILED | Analysis could not be completed. |
+
+## 18.4 Disease Detection
+
+Input:
+
+- Crop image.
+- Field identifier.
+- Submission metadata.
+
+Processing:
+
+1. Validate field authorization.
+2. Upload image to Cloudinary.
+3. Preprocess image.
+4. Run the trained model.
+5. Generate prediction.
+6. Store result and confidence information.
+7. Display result in the relevant field dashboard.
+
+Output may include:
+
+- Predicted disease class.
+- Confidence score.
+- Model version.
+- Analysis timestamp.
+- Guidance based on validated agricultural information.
+
+## 18.5 Soil Analysis
+
+Potential input measurements:
+
+- Soil moisture.
+- Soil temperature.
+- Soil pH.
+- Nitrogen.
+- Phosphorus.
+- Potassium.
+
+The actual model features must match the dataset used for training.
+
+## 18.6 Irrigation Planning
+
+Potential input:
+
+- Soil moisture.
+- Crop type.
+- Growth stage.
+- Available weather information.
+- Soil characteristics.
+
+Output:
+
+- Irrigation recommendation.
+- Suggested timing.
+- Supporting factors.
+- Data limitations.
+
+## 18.7 AI Model Reliability
+
+The project must distinguish between:
+
+- Demonstration model.
+- Trained model.
+- Validated model.
+- Production-ready model.
+
+Do not represent random, hardcoded, or unvalidated outputs as reliable AI predictions.
+
+---
+
+# 🔄 19. Farmer Recruitment Workflow
+
+```mermaid
+flowchart TD
+
+    A["Farm Owner Creates Job Post"]
+
+    B["Job Published"]
+
+    C["General Users Browse Jobs"]
+
+    D["User Submits Application"]
+
+    E["Application Stored as PENDING"]
+
+    F["Farm Owner Reviews Application"]
+
+    G{"Decision"}
+
+    H["Reject Application"]
+
+    I["Approve Application"]
+
+    J["Private Conversation"]
+
+    K["Owner Selects Fields"]
+
+    L["Create Field Assignments"]
+
+    M["Farmer Accesses Assigned Fields"]
+
+    A --> B --> C --> D --> E --> F --> G
+
+    G --> H
+    G --> I
+
+    I --> J --> K --> L --> M
+```
+
+### Important Rule
+
+Approving a job application does not automatically grant access to all farm fields.
+
+Only explicit field assignments grant the corresponding farmer workspace access.
+
+---
+
+# 🔗 20. Farmer Assignment Workflow
+
+AgroAI supports a many-to-many relationship between farmers and fields through assignment records.
+
+### Relationship
+
+```mermaid
+flowchart LR
+
+    F1["Farmer A"]
+    F2["Farmer B"]
+    F3["Farmer C"]
+
+    X["Field 1"]
+    Y["Field 2"]
+
+    F1 --> X
+    F1 --> Y
+
+    F2 --> X
+
+    F3 --> Y
+```
+
+### Assignment Rules
+
+1. Multiple farmers can work on one field.
+2. One farmer can work on multiple fields.
+3. Only authorized farm owners can assign farmers to their fields.
+4. Approved applicants must be selected before assignment if recruitment is the source of employment.
+5. Assignments must be stored as independent records.
+6. Releasing a farmer must preserve assignment history.
+7. Payment and review records must remain associated with the relevant assignment.
+
+### Assignment Lifecycle
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> ACTIVE
+
+    ACTIVE --> COMPLETED
+    ACTIVE --> RELEASED
+    ACTIVE --> REASSIGNED
+
+    REASSIGNED --> ACTIVE
+    COMPLETED --> [*]
+    RELEASED --> [*]
+```
+
+---
+
+# 📊 21. Activity and Data Flow Diagrams
+
+## 21.1 Level 0 — Context Diagram
+
+```mermaid
+flowchart LR
+
+    OWNER["Farm Owner"]
+    FARMER["Farmer"]
+    USER["General User"]
+
+    SYSTEM["AgroAI Platform"]
+
+    FIREBASE["Firebase Services"]
+    CLOUD["Cloudinary"]
+    AI["Python AI Service"]
+
+    OWNER <--> SYSTEM
+    FARMER <--> SYSTEM
+    USER <--> SYSTEM
+
+    SYSTEM <--> FIREBASE
+    SYSTEM <--> CLOUD
+    SYSTEM <--> AI
+```
+
+## 21.2 Level 1 — Main Data Flow
+
+```mermaid
+flowchart TB
+
+    U["User Input"]
+
+    P1["Authentication"]
+    P2["Farm Management"]
+    P3["Marketplace"]
+    P4["Assignment Management"]
+    P5["Agricultural Data Processing"]
+    P6["AI Analysis"]
+    P7["History and Reporting"]
+
+    DB[("Firestore")]
+    IMG["Cloudinary"]
+    AI["FastAPI AI Service"]
+
+    U --> P1
+    P1 --> P2
+    P1 --> P3
+
+    P2 --> DB
+    P3 --> DB
+    P3 --> P4
+
+    P4 --> DB
+
+    P5 --> IMG
+    P5 --> DB
+
+    P5 --> P6
+    P6 --> AI
+    AI --> P6
+
+    P6 --> DB
+    DB --> P7
+```
+
+## 21.3 Image Upload Sequence Diagram
+
+```mermaid
+sequenceDiagram
+
+    actor Farmer
+    participant Frontend
+    participant SpringBoot
+    participant Firestore
+    participant Cloudinary
+    participant AI as FastAPI
+
+    Farmer->>Frontend: Select field and upload image
+    Frontend->>SpringBoot: Submit image request
+    SpringBoot->>Firestore: Verify assignment
+    Firestore-->>SpringBoot: Permission confirmed
+
+    SpringBoot->>Cloudinary: Upload image
+    Cloudinary-->>SpringBoot: Image URL
+
+    SpringBoot->>Firestore: Create AI submission
+    SpringBoot->>AI: Request disease detection
+
+    AI->>AI: Preprocess and infer
+    AI-->>SpringBoot: Prediction result
+
+    SpringBoot->>Firestore: Store AI result
+    SpringBoot-->>Frontend: Return analysis status
+    Frontend-->>Farmer: Display result
+```
+
+---
+
+# 🔌 22. API Documentation Blueprint
+
+The following endpoints represent the proposed REST API structure. They are design specifications, not claims of implemented endpoints.
+
+## 22.1 Authentication
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register user |
+| POST | `/api/auth/login` | Login or exchange authentication credentials |
+| GET | `/api/auth/me` | Get current user |
+
+## 22.2 Farm Management
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/farms` | Register farm |
+| GET | `/api/farms` | List accessible farms |
+| GET | `/api/farms/public` | Browse public farms |
+| GET | `/api/farms/{farmId}` | Get farm details |
+| PUT | `/api/farms/{farmId}` | Update farm |
+| DELETE | `/api/farms/{farmId}` | Archive or delete farm according to retention policy |
+| GET | `/api/farms/{farmId}/dashboard` | Farm dashboard data |
+
+## 22.3 Field Management
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/farms/{farmId}/fields` | Create field |
+| GET | `/api/farms/{farmId}/fields` | List fields |
+| GET | `/api/fields/{fieldId}` | Get field |
+| PUT | `/api/fields/{fieldId}` | Update field |
+| GET | `/api/fields/{fieldId}/dashboard` | Get field dashboard |
+
+## 22.4 Marketplace
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/jobs` | Publish job |
+| GET | `/api/jobs` | Browse jobs |
+| GET | `/api/jobs/{jobId}` | Get job details |
+| PUT | `/api/jobs/{jobId}` | Update job |
+| POST | `/api/jobs/{jobId}/applications` | Apply for job |
+| GET | `/api/jobs/{jobId}/applications` | List applications |
+| PATCH | `/api/applications/{applicationId}/status` | Review application |
+
+## 22.5 Assignments
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/fields/{fieldId}/assignments` | Assign farmer |
+| GET | `/api/fields/{fieldId}/assignments` | List field assignments |
+| GET | `/api/farmers/me/assignments` | Farmer's assignments |
+| PATCH | `/api/assignments/{assignmentId}/release` | Release farmer |
+| GET | `/api/assignments/{assignmentId}` | Assignment details |
+
+## 22.6 Agricultural Data and AI
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/fields/{fieldId}/telemetry` | Submit soil data |
+| GET | `/api/fields/{fieldId}/telemetry` | Retrieve soil history |
+| POST | `/api/fields/{fieldId}/disease-detection` | Submit disease detection request |
+| POST | `/api/fields/{fieldId}/analysis` | Request AI analysis |
+| GET | `/api/submissions/{submissionId}` | Get submission status |
+| GET | `/api/fields/{fieldId}/analysis` | Get analysis history |
+| GET | `/api/results/{resultId}` | Get AI result |
+
+## 22.7 Chat, Payment and Rating
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/conversations` | Create authorized conversation |
+| GET | `/api/conversations` | List accessible conversations |
+| GET | `/api/conversations/{id}/messages` | Retrieve messages |
+| POST | `/api/conversations/{id}/messages` | Send message |
+| POST | `/api/assignments/{id}/payments` | Record payment |
+| GET | `/api/assignments/{id}/payments` | Retrieve payment records |
+| POST | `/api/assignments/{id}/reviews` | Submit review |
+
+### WebSocket
+
+Proposed WebSocket endpoint:
 
 ```text
-Organization A
-    |
-    +-- Branch A1
-    +-- Branch A2
-
-Organization B
-    |
-    +-- Branch B1
-    +-- Branch B2
+/ws/chat
 ```
 
-Users from Organization A must never access Organization B's private data.
-
-This restriction must be enforced by backend authorization and database design, not merely by hiding frontend pages.
+WebSocket connection and message delivery must enforce authentication and conversation membership.
 
 ---
 
-## 15. API Design
+# 🔐 23. Authentication and Authorization
 
-### 15.1 API Conventions
+AgroAI uses Firebase Authentication for user identity and Spring Security for backend authorization.
 
-Base path:
+### Authentication Flow
 
-```text
-/api/v1
+```mermaid
+sequenceDiagram
+
+    actor User
+    participant Frontend
+    participant Firebase as Firebase Auth
+    participant Backend as Spring Boot
+    participant Firestore
+
+    User->>Frontend: Login
+    Frontend->>Firebase: Authenticate
+    Firebase-->>Frontend: ID Token
+
+    Frontend->>Backend: API Request + Bearer Token
+    Backend->>Firebase: Verify Token
+    Firebase-->>Backend: Verified Identity
+
+    Backend->>Firestore: Check Resource Permission
+    Firestore-->>Backend: Permission Data
+
+    Backend-->>Frontend: Authorized Response
 ```
 
-Use:
+### Authorization Rules
 
-- RESTful endpoint naming.
-- JSON request and response bodies.
-- HTTP status codes.
-- Bearer token authentication.
-- Pagination for large collections.
-- Validation errors with meaningful messages.
-- Consistent error response structures.
+| Resource | Permission |
+|---|---|
+| Public Farm | Any visitor, if public |
+| Private Farm | Authorized owner and permitted members |
+| Farm Dashboard | Farm owner and authorized members |
+| Field Dashboard | Owner and authorized field members |
+| Farmer Workspace | Farmer with active field assignment |
+| Job Application | Applicant and relevant farm owner |
+| Private Chat | Authorized conversation participants |
+| Payment Records | Relevant authorized owner and farmer |
+| AI Results | Authorized users of the relevant field |
 
-### 15.2 Example API Endpoints
+### Security Principle
 
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/api/v1/users/me` | Current user profile |
-| GET | `/api/v1/organizations` | List authorized organizations |
-| POST | `/api/v1/organizations` | Create organization |
-| GET | `/api/v1/employees` | List employees |
-| POST | `/api/v1/employees` | Create employee |
-| GET | `/api/v1/attendance` | View attendance |
-| POST | `/api/v1/attendance/check-in` | Check in |
-| POST | `/api/v1/attendance/check-out` | Check out |
-| GET | `/api/v1/leave-requests` | List leave requests |
-| POST | `/api/v1/leave-requests` | Submit leave request |
-| POST | `/api/v1/leave-requests/{id}/approve` | Approve leave |
-| POST | `/api/v1/leave-requests/{id}/reject` | Reject leave |
-| GET | `/api/v1/products` | List products |
-| POST | `/api/v1/products` | Create product |
-| POST | `/api/v1/purchase-requests` | Create purchase request |
-| GET | `/api/v1/purchase-orders` | List purchase orders |
-| POST | `/api/v1/sales-orders` | Create sales order |
-| GET | `/api/v1/workflows` | List workflows |
-| POST | `/api/v1/workflows` | Create workflow |
-| POST | `/api/v1/workflows/{id}/publish` | Publish workflow |
-| GET | `/api/v1/reports/overview` | Business overview |
-| GET | `/api/v1/audit-logs` | View authorized audit logs |
+Hiding frontend buttons is not sufficient security.
 
-### 15.3 Example Request
-
-```http
-POST /api/v1/leave-requests
-Authorization: Bearer FIREBASE_ID_TOKEN
-Content-Type: application/json
-```
-
-```json
-{
-  "startDate": "2026-12-10",
-  "endDate": "2026-12-12",
-  "leaveType": "ANNUAL",
-  "reason": "Personal reasons"
-}
-```
-
-### 15.4 Example Response
-
-```json
-{
-  "success": true,
-  "message": "Leave request submitted successfully.",
-  "data": {
-    "id": "REQUEST_UUID",
-    "status": "PENDING_APPROVAL"
-  }
-}
-```
-
-### 15.5 Standard Error Response
-
-```json
-{
-  "success": false,
-  "message": "You do not have permission to perform this action.",
-  "code": "FORBIDDEN",
-  "timestamp": "2026-11-08T10:00:00Z"
-}
-```
+Every sensitive operation must verify the authenticated user's permission on the backend.
 
 ---
 
-## 16. Technology Stack
+# 🧠 24. Object-Oriented Programming Implementation
 
-| Layer | Technology | Purpose |
-|---|---|---|
-| Frontend | React | User interface |
-| Language | TypeScript | Type-safe frontend development |
-| Styling | Tailwind CSS | Responsive styling |
-| Workflow UI | React Flow | Visual workflow editor |
-| Charts | Recharts | Data visualization |
-| Backend | Java 21+ | Backend programming |
-| Framework | Spring Boot | Application framework |
-| Security | Spring Security | API security |
-| ORM | Spring Data JPA / Hibernate | Database access |
-| API | REST | Frontend-backend communication |
-| Database | PostgreSQL | Business data storage |
-| Database Hosting | Supabase | Managed PostgreSQL |
-| Authentication | Firebase Authentication | User identity |
-| Storage | Supabase Storage | Document and image storage |
-| Notifications | Firebase Cloud Messaging (optional) | Push notifications |
-| Testing | JUnit 5 | Backend testing |
-| Mocking | Mockito | Unit test isolation |
-| E2E Testing | Playwright | Browser testing |
-| Version Control | Git | Source control |
-| Repository | GitHub | Collaboration |
+AgroAI is developed as an Object-Oriented Programming Lab project using Java.
 
-### 16.1 Why This Stack?
+The architecture should demonstrate core OOP concepts through real application components.
 
-**React + TypeScript**
+## 24.1 Encapsulation
 
-Provides a component-based frontend with better type safety.
-
-**Spring Boot**
-
-Provides a structured Java backend with security, database integration, and REST API support.
-
-**PostgreSQL**
-
-Provides relational data management and transactional consistency.
-
-**Firebase Authentication**
-
-Handles user identity and authentication.
-
-**Supabase Storage**
-
-Stores documents and images without placing large files directly in the database.
-
-**React Flow**
-
-Helps build the visual workflow editor.
-
-### 16.2 Important Architecture Decision
-
-Firebase Authentication is used for identity, not as the primary business database.
-
-PostgreSQL remains the primary source of truth for organizational and financial records.
-
-The backend must verify Firebase ID tokens and independently enforce permissions.
-
----
-
-## 17. Object-Oriented Programming Concepts
-
-NexusOS uses Object-Oriented Programming (OOP) principles.
-
-### 17.1 Encapsulation
-
-Encapsulation keeps data and related operations together.
+Encapsulation protects object data and controls how it is modified.
 
 Example:
 
 ```java
-public class Employee {
+public class Field {
 
-    private String employeeCode;
-    private String designation;
+    private String fieldId;
+    private String fieldName;
+    private double area;
 
-    public String getEmployeeCode() {
-        return employeeCode;
+    public String getFieldName() {
+        return fieldName;
     }
 
-    public void updateDesignation(String designation) {
-        if (designation == null || designation.isBlank()) {
+    public void updateFieldName(String fieldName) {
+        if (fieldName == null || fieldName.isBlank()) {
             throw new IllegalArgumentException(
-                "Designation cannot be empty"
+                "Field name cannot be empty"
             );
         }
 
-        this.designation = designation;
+        this.fieldName = fieldName;
     }
 }
 ```
 
-### 17.2 Inheritance
+## 24.2 Inheritance
 
-Inheritance allows related classes to reuse common properties.
+Inheritance allows specialized classes to reuse common behavior.
+
+Example conceptual hierarchy:
 
 ```java
-public abstract class BaseEntity {
+public abstract class AgriculturalRecord {
 
-    protected UUID id;
-    protected Instant createdAt;
-    protected Instant updatedAt;
+    protected String recordId;
+    protected String fieldId;
+
+    public abstract String getRecordType();
 }
 ```
 
-### 17.3 Abstraction
-
-Abstraction exposes essential operations without exposing internal implementation details.
-
 ```java
-public interface NotificationService {
+public class SoilTelemetry extends AgriculturalRecord {
 
-    void sendNotification(
-        String recipient,
-        String message
-    );
-}
-```
-
-### 17.4 Polymorphism
-
-Polymorphism allows different implementations of a common interface.
-
-```java
-public class EmailNotificationService
-        implements NotificationService {
+    private double moisture;
 
     @Override
-    public void sendNotification(
-            String recipient,
-            String message) {
-        // Email implementation
+    public String getRecordType() {
+        return "SOIL_TELEMETRY";
+    }
+}
+```
+
+## 24.3 Polymorphism
+
+Polymorphism allows different AI processors to implement a common interface.
+
+```java
+public interface AIAnalysisService {
+
+    AnalysisResult analyze(AnalysisRequest request);
+}
+```
+
+```java
+public class DiseaseDetectionService
+        implements AIAnalysisService {
+
+    @Override
+    public AnalysisResult analyze(
+            AnalysisRequest request) {
+
+        // Call disease detection service
+        return new AnalysisResult();
     }
 }
 ```
 
 ```java
-public class PushNotificationService
-        implements NotificationService {
+public class SoilAnalysisService
+        implements AIAnalysisService {
 
     @Override
-    public void sendNotification(
-            String recipient,
-            String message) {
-        // Push notification implementation
+    public AnalysisResult analyze(
+            AnalysisRequest request) {
+
+        // Call soil analysis service
+        return new AnalysisResult();
     }
 }
 ```
 
-### 17.5 SOLID Principles
+## 24.4 Abstraction
 
-| Principle | Application |
+Interfaces and abstract classes define common behavior while hiding implementation details.
+
+## 24.5 Composition
+
+A farm contains fields, and each field contains or references its related agricultural records.
+
+## 24.6 Association
+
+Users, farms, fields, job applications, assignments, and payments have relationships.
+
+### OOP Concept Mapping
+
+| OOP Concept | AgroAI Example |
 |---|---|
-| S — Single Responsibility | Each service handles one business responsibility |
-| O — Open/Closed | New workflow actions can be added without rewriting the engine |
-| L — Liskov Substitution | Implementations remain compatible with their interfaces |
-| I — Interface Segregation | Small, focused service interfaces |
-| D — Dependency Inversion | Services depend on abstractions |
+| Encapsulation | Field, Farm, User |
+| Inheritance | AgriculturalRecord hierarchy |
+| Polymorphism | AIAnalysisService implementations |
+| Abstraction | Service interfaces |
+| Composition | Farm and Field domain model |
+| Association | User, Assignment and Field |
+| Method Overriding | Specialized analysis implementations |
 
 ---
 
-## 18. Design Patterns
+# 🖥️ 25. User Interface Structure
 
-| Design Pattern | Proposed Application |
-|---|---|
-| Factory | Creating workflow action handlers |
-| Strategy | Different approval and calculation policies |
-| Observer | Reacting to business events |
-| State | Managing request and workflow states |
-| Command | Representing executable workflow actions |
-| Chain of Responsibility | Processing approval stages |
-| Builder | Constructing complex report and workflow objects |
+The platform is organized around different user experiences.
 
-### 18.1 Example: Strategy Pattern
-
-```java
-public interface ApprovalStrategy {
-
-    boolean approve(PurchaseRequest request);
-}
-```
-
-```java
-public class ManagerApprovalStrategy
-        implements ApprovalStrategy {
-
-    @Override
-    public boolean approve(PurchaseRequest request) {
-        return request.getEstimatedCost() <= 10000;
-    }
-}
-```
-
-The example is illustrative. Real approval decisions must use configurable business rules and authorization checks rather than relying on a hard-coded amount.
-
-### 18.2 Example: Observer Pattern
-
-A purchase request event can notify multiple independent listeners:
+## Public Pages
 
 ```text
-Purchase Request Created
-          |
-          +----> Notification Listener
-          |
-          +----> Workflow Listener
-          |
-          +----> Audit Listener
+/
+├── Landing Page
+├── Login
+├── Register
+├── Explore Farms
+├── Explore Jobs
+└── Job Details
+```
+
+## Farm Owner Pages
+
+```text
+/owner
+├── Dashboard
+├── My Farms
+├── Register Farm
+├── Farm Details
+├── Field Management
+├── Farmer Management
+├── Job Management
+├── Applications
+├── Chat
+├── Payments
+├── Ratings
+└── Activity History
+```
+
+## Field Dashboard
+
+```text
+/fields/:fieldId
+├── Overview
+├── AI Analysis
+├── Disease Detection
+├── Irrigation Planner
+├── Soil Telemetry
+├── Assigned Farmers
+└── History & Logs
+```
+
+## Farmer Workspace
+
+```text
+/farmer
+├── Dashboard
+├── Assigned Fields
+├── Field Details
+├── Upload Crop Image
+├── Submit Soil Data
+├── AI Results
+├── Job Applications
+└── Messages
+```
+
+These are proposed navigation routes. Final routing should follow the actual frontend implementation.
+
+---
+
+# 📁 26. Project Directory Structure
+
+The following is the proposed monorepo structure.
+
+```text
+AgroAI/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── .env.example
+│
+├── docs/
+│   ├── SRS.md
+│   ├── ARCHITECTURE.md
+│   ├── UML.md
+│   ├── DATABASE_DESIGN.md
+│   ├── API_DOCUMENTATION.md
+│   ├── AI_DOCUMENTATION.md
+│   ├── SECURITY.md
+│   └── TESTING.md
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── layouts/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   ├── contexts/
+│   │   ├── routes/
+│   │   ├── types/
+│   │   └── App.tsx
+│   ├── package.json
+│   └── README.md
+│
+├── backend/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/agroai/
+│   │   │   │       ├── config/
+│   │   │   │       ├── security/
+│   │   │   │       ├── auth/
+│   │   │   │       ├── user/
+│   │   │   │       ├── farm/
+│   │   │   │       ├── field/
+│   │   │   │       ├── marketplace/
+│   │   │   │       ├── assignment/
+│   │   │   │       ├── chat/
+│   │   │   │       ├── telemetry/
+│   │   │   │       ├── ai/
+│   │   │   │       ├── payment/
+│   │   │   │       ├── review/
+│   │   │   │       ├── history/
+│   │   │   │       └── common/
+│   │   │   └── resources/
+│   │   │       └── application.yml
+│   │   └── test/
+│   ├── pom.xml
+│   └── README.md
+│
+├── ai-service/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   ├── preprocessing/
+│   │   └── main.py
+│   ├── models/
+│   ├── datasets/
+│   ├── tests/
+│   ├── requirements.txt
+│   └── README.md
+│
+└── assets/
+    ├── diagrams/
+    ├── screenshots/
+    └── presentation/
 ```
 
 ---
 
-## 19. Security Requirements
+# 🚀 27. Installation and Setup
 
-Security is a critical requirement because the system handles employee, financial, customer, and organizational information.
+## Prerequisites
 
-### 19.1 Authentication
+Install the following tools:
 
-- Firebase Authentication.
-- Firebase ID token verification on the backend.
-- Secure session handling.
-- Account deactivation.
-- Token expiration handling.
+- Java Development Kit (JDK) 21.
+- Maven.
+- Node.js and npm.
+- Python 3.10 or compatible version required by selected AI dependencies.
+- Git.
+- Firebase project.
+- Cloudinary account.
 
-### 19.2 Authorization
+## Step 1: Clone Repository
 
-- Role-Based Access Control.
-- Permission-based API authorization.
-- Organization-level isolation.
-- Branch-level restrictions.
-- Department-level restrictions.
-- Resource ownership checks.
+```bash
+git clone https://github.com/YOUR-USERNAME/AgroAI.git
 
-### 19.3 Data Protection
+cd AgroAI
+```
 
-- HTTPS in deployment.
-- Environment variables for secrets.
-- No credentials in GitHub.
-- Secure file access.
-- Input validation.
-- SQL injection protection through parameterized database operations.
-- Appropriate output encoding.
-- Rate limiting for sensitive endpoints.
-- Audit logging.
+Replace `YOUR-USERNAME` with the actual GitHub username.
 
-### 19.4 Audit Logging
+## Step 2: Frontend Setup
 
-Important events should record:
+```bash
+cd frontend
 
-- User ID.
-- Organization ID.
-- Action performed.
-- Entity type.
-- Entity ID.
-- Previous value where appropriate.
-- New value where appropriate.
-- Timestamp.
-- Request or correlation ID.
+npm install
 
-Audit logs should be protected against unauthorized modification.
+npm run dev
+```
 
-### 19.5 Security Rule
+## Step 3: Backend Setup
 
-**Frontend permissions are not security boundaries. Every sensitive action must be authorized by the backend.**
+```bash
+cd backend
+
+mvn clean install
+
+mvn spring-boot:run
+```
+
+## Step 4: AI Service Setup
+
+```bash
+cd ai-service
+
+python -m venv venv
+```
+
+Activate virtual environment.
+
+Windows:
+
+```powershell
+venv\Scripts\activate
+```
+
+Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the AI service:
+
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
+## Step 5: Verify Services
+
+| Service | Example Local Address |
+|---|---|
+| React Frontend | http://localhost:5173 |
+| Spring Boot | http://localhost:8080 |
+| FastAPI | http://localhost:8000 |
+| FastAPI Swagger | http://localhost:8000/docs |
+| Springdoc Swagger | http://localhost:8080/swagger-ui/index.html |
+
+These are proposed development defaults; actual ports may differ according to configuration.
 
 ---
 
-## 20. Testing Strategy
+# 🔑 28. Environment Configuration
 
-### 20.1 Unit Testing
+Create environment configuration files locally.
 
-Tools:
+Do not commit actual secrets to GitHub.
+
+## Frontend Environment
+
+Example `.env.example`:
+
+```env
+VITE_API_BASE_URL=http://localhost:8080/api
+
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_APP_ID=your_firebase_app_id
+```
+
+Firebase web configuration values are client configuration, not substitutes for backend authorization. Configure appropriate Firebase security and domain restrictions.
+
+## Backend Environment
+
+Example configuration:
+
+```yaml
+server:
+  port: 8080
+
+spring:
+  application:
+    name: agroai-backend
+
+firebase:
+  project-id: ${FIREBASE_PROJECT_ID}
+
+cloudinary:
+  cloud-name: ${CLOUDINARY_CLOUD_NAME}
+  api-key: ${CLOUDINARY_API_KEY}
+  api-secret: ${CLOUDINARY_API_SECRET}
+
+ai:
+  service-url: ${AI_SERVICE_URL:http://localhost:8000}
+```
+
+Firebase Admin SDK credentials should be provided through a secure service-account mechanism, such as a protected local credential file or workload identity.
+
+## AI Service Environment
+
+```env
+AI_SERVICE_HOST=0.0.0.0
+AI_SERVICE_PORT=8000
+
+MODEL_PATH=models/disease_model.pth
+
+MODEL_VERSION=development
+```
+
+### Security Warning
+
+Never upload:
+
+- Firebase service account JSON files.
+- Cloudinary API secrets.
+- Private API keys.
+- Authentication tokens.
+- Production credentials.
+
+Add all secret files to `.gitignore`.
+
+---
+
+# 🗺️ 29. Development Roadmap
+
+The project will be developed through seven major milestones.
+
+| Milestone | Main Deliverable |
+|---|---|
+| 1 | Requirement analysis, SRS, UML, architecture and Firestore design |
+| 2 | Authentication, user accounts and farm registration |
+| 3 | Farm dashboard, field management and access control |
+| 4 | Farmer marketplace, job applications and chat |
+| 5 | Assignments, payment records, ratings and history |
+| 6 | AI integration, crop images, soil telemetry and analysis |
+| 7 | Integration, testing, documentation and final presentation |
+
+### Milestone Dependency
+
+```mermaid
+flowchart TD
+
+    M1["M1: Planning and Design"]
+    M2["M2: Authentication and Farm"]
+    M3["M3: Field Management"]
+    M4["M4: Farmer Marketplace"]
+    M5["M5: Assignment and Payment"]
+    M6["M6: AI Integration"]
+    M7["M7: Testing and Submission"]
+
+    M1 --> M2
+    M2 --> M3
+    M3 --> M4
+    M3 --> M6
+    M4 --> M5
+    M5 --> M7
+    M6 --> M7
+```
+
+---
+
+# 👨‍💻 30. Team Responsibilities
+
+The project is developed by a team of three members.
+
+## Member 1 — Backend and System Architecture
+
+Responsibilities:
+
+- Java 21.
+- Spring Boot.
+- Firebase integration.
+- Authentication and authorization.
+- Farm registration.
+- Field management.
+- Backend business logic.
+- Core OOP architecture.
+- API development.
+
+## Member 2 — Frontend and Marketplace
+
+Responsibilities:
+
+- React.
+- TypeScript.
+- Tailwind CSS.
+- Public landing page.
+- Registration and login UI.
+- Owner dashboard.
+- Farmer workspace.
+- Job marketplace.
+- Application interfaces.
+- Chat interface.
+- Frontend API integration.
+
+## Member 3 — AI and Agricultural Intelligence
+
+Responsibilities:
+
+- Python.
+- FastAPI.
+- PyTorch.
+- Disease detection.
+- Image preprocessing.
+- Soil analysis.
+- Irrigation recommendation.
+- Crop recommendation.
+- Yield prediction.
+- AI API integration.
+- Model evaluation.
+
+### Shared Responsibilities
+
+All members participate in:
+
+- Requirement analysis.
+- Database design.
+- API contract decisions.
+- Integration.
+- Testing.
+- Documentation.
+- Final presentation.
+
+### Team Member Information
+
+| Role | Name | Student ID |
+|---|---|---|
+| Member 1 | To be added | To be added |
+| Member 2 | To be added | To be added |
+| Member 3 | To be added | To be added |
+
+---
+
+# 🧪 31. Testing Strategy
+
+Testing will be conducted at multiple levels.
+
+## Unit Testing
+
+Backend:
 
 - JUnit 5.
 - Mockito.
 
-Test individual services, validation rules, calculations, and workflow components.
+AI service:
 
-### 20.2 Integration Testing
-
-Test:
-
-- Database operations.
-- Authentication verification.
-- API authorization.
-- Service-to-service interactions.
-- Workflow execution.
-- Transaction consistency.
-
-### 20.3 End-to-End Testing
-
-Tool: Playwright.
-
-Test important user journeys:
-
-1. User login.
-2. Employee creation.
-3. Leave application.
-4. Leave approval.
-5. Purchase request.
-6. Budget approval.
-7. Goods receiving.
-8. Inventory update.
-9. Report generation.
-
-### 20.4 Example Acceptance Criteria
-
-| Feature | Acceptance Criteria |
-|---|---|
-| Login | Valid users can authenticate |
-| Authorization | Unauthorized users cannot access protected resources |
-| Employee Management | Authorized HR users can manage employee records |
-| Leave | Employees can submit leave applications |
-| Approval | Only authorized approvers can approve requests |
-| Inventory | Stock movements are recorded correctly |
-| Procurement | Approved purchases can generate purchase orders |
-| Workflow | Workflow executions are traceable |
-| Reporting | Reports respect organizational permissions |
-| Audit | Important changes produce audit records |
-
-### 20.5 Testing Flow
-
-```mermaid
-flowchart TD
-    A[Requirement Review]
-    B[Unit Testing]
-    C[Integration Testing]
-    D[Security Testing]
-    E[End-to-End Testing]
-    F[Acceptance Testing]
-    G[Release Candidate]
-
-    A --> B --> C --> D --> E --> F --> G
-```
-
----
-
-## 21. Deployment Architecture
-
-### 21.1 Proposed Deployment
-
-```mermaid
-flowchart TB
-    USER[User Browser]
-    HOST[Frontend Hosting]
-    FIREBASE[Firebase Authentication]
-    BACKEND[Spring Boot Backend]
-    DB[(Supabase PostgreSQL)]
-    STORAGE[(Supabase Storage)]
-
-    USER --> HOST
-    HOST --> FIREBASE
-    HOST --> BACKEND
-    BACKEND --> FIREBASE
-    BACKEND --> DB
-    BACKEND --> STORAGE
-```
-
-### 21.2 Development Environment
-
-Recommended local setup:
-
-- Windows, Linux, or macOS.
-- Node.js LTS.
-- Java 21 or newer supported version.
-- Maven.
-- Git.
-- PostgreSQL or Supabase project.
-- Firebase project.
-- IDE such as IntelliJ IDEA or Visual Studio Code.
-
-### 21.3 Environment Variables
-
-Example frontend `.env.example`:
-
-```env
-VITE_API_BASE_URL=http://localhost:8080/api/v1
-
-VITE_FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
-VITE_FIREBASE_AUTH_DOMAIN=YOUR_FIREBASE_AUTH_DOMAIN
-VITE_FIREBASE_PROJECT_ID=YOUR_FIREBASE_PROJECT_ID
-```
-
-Example backend configuration:
-
-```env
-SERVER_PORT=8080
-
-DATABASE_URL=YOUR_DATABASE_URL
-DATABASE_USERNAME=YOUR_DATABASE_USERNAME
-DATABASE_PASSWORD=YOUR_DATABASE_PASSWORD
-
-FIREBASE_PROJECT_ID=YOUR_FIREBASE_PROJECT_ID
-
-SUPABASE_URL=YOUR_SUPABASE_URL
-SUPABASE_SERVICE_ROLE_KEY=YOUR_SERVER_SIDE_SECRET
-```
-
-**Security warning:** Never commit real secrets, service-role keys, private keys, or passwords to GitHub. Use deployment-provider secret management.
-
-The Firebase web configuration is not a substitute for backend security. Backend credentials must remain server-side.
-
-### 21.4 Deployment Considerations
-
-Possible student-prototype hosting options:
-
-- Frontend: Vercel or Cloudflare Pages.
-- Backend: Render or another Java-compatible hosting provider.
-- Database: Supabase PostgreSQL.
-- Authentication: Firebase Authentication.
-- Storage: Supabase Storage.
-
-Free-tier availability, limits, and sleep behavior can change. Production hosting may require paid services.
-
----
-
-## 22. Project Structure
-
-### 22.1 Frontend Structure
-
-```text
-nexusos-frontend/
-│
-├── public/
-│
-├── src/
-│   ├── assets/
-│   │
-│   ├── components/
-│   │   ├── common/
-│   │   ├── layout/
-│   │   ├── forms/
-│   │   └── charts/
-│   │
-│   ├── modules/
-│   │   ├── organization/
-│   │   ├── employees/
-│   │   ├── attendance/
-│   │   ├── leave/
-│   │   ├── payroll/
-│   │   ├── finance/
-│   │   ├── inventory/
-│   │   ├── procurement/
-│   │   ├── crm/
-│   │   ├── sales/
-│   │   ├── projects/
-│   │   ├── workflows/
-│   │   ├── documents/
-│   │   └── reports/
-│   │
-│   ├── hooks/
-│   ├── services/
-│   ├── contexts/
-│   ├── routes/
-│   ├── types/
-│   ├── utils/
-│   ├── config/
-│   │
-│   ├── App.tsx
-│   └── main.tsx
-│
-├── .env.example
-├── package.json
-└── README.md
-```
-
-### 22.2 Backend Structure
-
-```text
-nexusos-backend/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/com/nexusos/
-│   │   │
-│   │   │   ├── config/
-│   │   │   ├── security/
-│   │   │   ├── common/
-│   │   │   ├── exception/
-│   │   │   │
-│   │   │   ├── organization/
-│   │   │   ├── user/
-│   │   │   ├── employee/
-│   │   │   ├── attendance/
-│   │   │   ├── leave/
-│   │   │   ├── payroll/
-│   │   │   ├── finance/
-│   │   │   ├── inventory/
-│   │   │   ├── procurement/
-│   │   │   ├── crm/
-│   │   │   ├── sales/
-│   │   │   ├── project/
-│   │   │   ├── workflow/
-│   │   │   ├── notification/
-│   │   │   ├── document/
-│   │   │   ├── reporting/
-│   │   │   └── audit/
-│   │   │
-│   │   └── resources/
-│   │       ├── application.yml
-│   │       └── db/migration/
-│   │
-│   └── test/
-│
-├── pom.xml
-├── .env.example
-└── README.md
-```
-
-### 22.3 Module Structure Convention
-
-Each backend module should separate responsibilities:
-
-```text
-employee/
-├── controller/
-├── service/
-├── repository/
-├── entity/
-├── dto/
-├── mapper/
-└── validation/
-```
-
----
-
-## 23. Development Roadmap
-
-The following is a proposed implementation sequence, not a statement of completed work.
-
-```mermaid
-gantt
-    title NexusOS Development Roadmap
-    dateFormat YYYY-MM-DD
-    axisFormat %b %d
-
-    section Planning
-    Requirements and SRS       :a1, 2026-11-08, 7d
-    Architecture and Database  :a2, after a1, 7d
-
-    section Foundation
-    Authentication and RBAC    :b1, after a2, 10d
-    Organization Management    :b2, after b1, 7d
-
-    section Core Modules
-    Employee and Attendance    :c1, after b2, 14d
-    Finance and Inventory      :c2, after c1, 14d
-    Procurement and Sales      :c3, after c2, 14d
-
-    section Integration
-    Workflow Automation        :d1, after c3, 14d
-    Reports and Notifications  :d2, after d1, 10d
-
-    section Quality
-    Testing and Security       :e1, after d2, 10d
-    Documentation and Demo     :e2, after e1, 7d
-```
-
-### 23.1 Proposed Development Phases
-
-| Phase | Work | Expected Deliverable |
-|---|---|---|
-| Phase 1 | Requirements and planning | SRS and architecture |
-| Phase 2 | Database and authentication | Secure foundation |
-| Phase 3 | Organization and HR | Employee management |
-| Phase 4 | Attendance and leave | HR operational workflow |
-| Phase 5 | Finance and inventory | Integrated business records |
-| Phase 6 | Procurement and sales | Purchase-to-sales operations |
-| Phase 7 | Workflow engine | Automated approval system |
-| Phase 8 | Analytics and notifications | Management dashboard |
-| Phase 9 | Testing and deployment | Demonstrable prototype |
-
-The schedule should be adjusted according to team capacity and academic deadlines.
-
----
-
-## 24. Three-Member Team Responsibilities
-
-The following allocation is a suggested starting point.
-
-| Member | Primary Responsibility | Tasks |
-|---|---|---|
-| Member 1 | Backend and Workflow | Spring Boot APIs, business logic, workflow engine, authorization |
-| Member 2 | Frontend and UI/UX | React application, dashboards, forms, workflow editor |
-| Member 3 | Database, Integration and QA | PostgreSQL design, Firebase integration, testing, documentation |
-
-### 24.1 Shared Responsibilities
-
-All team members should participate in:
-
-- Requirement analysis.
-- Architecture discussions.
-- Code reviews.
-- Integration testing.
-- Bug fixing.
-- Demonstration preparation.
-- Documentation updates.
-
-### 24.2 Suggested Presentation Division
-
-| Presenter | Presentation Topics |
-|---|---|
-| Presenter 1 | Introduction, problem, objectives, system modules |
-| Presenter 2 | Workflow engine, architecture, technology stack, database |
-| Presenter 3 | OOP, design patterns, integrated example, roadmap and conclusion |
-
----
-
-## 25. Risks, Assumptions and Constraints
-
-### 25.1 Risks
-
-| Risk | Impact | Mitigation |
-|---|---|---|
-| Complex workflow logic | High | Build the engine incrementally |
-| Database inconsistency | High | Use transactions and constraints |
-| Unauthorized data access | Critical | Server-side authorization and tenant isolation |
-| Scope expansion | High | Define an MVP |
-| Team integration issues | Medium | Use clear API contracts |
-| Hosting limitations | Medium | Maintain a local demo environment |
-| Incomplete testing | High | Automate critical user journeys |
-
-### 25.2 Assumptions
-
-- Users have internet access.
-- The organization provides accurate business information.
-- Administrators configure roles and permissions.
-- Each company has a unique organization identifier.
-- The backend is the authority for business rules.
-- External services may have free-tier limitations.
-
-### 25.3 Constraints
-
-- Limited university project development time.
-- Limited team size.
-- Limited hosting budget.
-- External service availability.
-- Limited access to real enterprise data.
-
----
-
-## 26. Future Enhancements
-
-Possible future features include:
-
-1. AI-powered business analytics.
-2. Predictive inventory management.
-3. Advanced workflow recommendations.
-4. Mobile applications.
-5. Biometric attendance integration.
-6. Advanced financial forecasting.
-7. Supplier performance analytics.
-8. Advanced project resource planning.
-9. Multi-language support.
-10. Integration with external accounting systems.
-11. Microservices migration if justified by scale.
-12. Advanced business intelligence dashboards.
-
----
-
-## 27. Glossary
-
-| Term | Meaning |
-|---|---|
-| ERP | Enterprise Resource Planning |
-| CRM | Customer Relationship Management |
-| HRM | Human Resource Management |
-| RBAC | Role-Based Access Control |
-| API | Application Programming Interface |
-| ORM | Object-Relational Mapping |
-| SRS | Software Requirements Specification |
-| KPI | Key Performance Indicator |
-| SKU | Stock Keeping Unit |
-| JWT | JSON Web Token |
-| CRUD | Create, Read, Update, Delete |
-| Workflow | A sequence of connected business operations |
-| Tenant | An independently managed organization in a multi-tenant system |
-| Audit Log | A record of important system activities |
-| Modular Monolith | One deployable application organized into independent modules |
-
----
-
-## 28. Project Status and Academic Disclaimer
-
-**Project Status: Proposed / In Development**
-
-NexusOS is presented as a proposed university-level software engineering project.
-
-The requirements, diagrams, architecture, and implementation examples in this document describe the intended design.
-
-They do not imply that every feature has already been implemented, tested, or deployed.
-
-Implementation status should be updated as development progresses.
-
----
-
-## 29. Conclusion
-
-NexusOS aims to demonstrate how different enterprise departments can work together through one centralized platform.
-
-By combining organizational management, HR, finance, inventory, procurement, sales, project management, and workflow automation, the system seeks to reduce disconnected operations and improve business visibility.
-
-The Workflow Automation Engine is the central innovation of the proposed platform because it connects departmental activities into structured, traceable processes.
-
-**NexusOS — One Platform. Every Department. Connected Workflows.**
-
----
-
-# PART II — সম্পূর্ণ বাংলা সংস্করণ
-
-# NexusOS — সমন্বিত এন্টারপ্রাইজ অপারেটিং সিস্টেম
-
-<p align="center">
-  <strong>একটি প্ল্যাটফর্ম। প্রতিটি বিভাগ। সংযুক্ত কার্যপ্রবাহ।</strong>
-</p>
-
-## ১. প্রকল্প পরিচিতি
-
-### ১.১ প্রকল্পের তথ্য
-
-| বিষয় | বিবরণ |
-|---|---|
-| প্রকল্পের নাম | NexusOS |
-| পূর্ণ নাম | Unified Enterprise Operating System |
-| প্রকল্পের ধরন | ERP এবং Business Management System |
-| প্রকল্পের বিভাগ | বিশ্ববিদ্যালয়ের একাডেমিক প্রজেক্ট |
-| প্রধান উদ্দেশ্য | প্রতিষ্ঠানের সকল বিভাগের কার্যক্রম এক প্ল্যাটফর্মে পরিচালনা |
-| Frontend | React, TypeScript, Tailwind CSS |
-| Backend | Java, Spring Boot |
-| Database | PostgreSQL |
-| Authentication | Firebase Authentication |
-| File Storage | Supabase Storage |
-| Architecture | Modular Monolith |
-| Interface | Web Application |
-
-### ১.২ প্রকল্পের সারসংক্ষেপ
-
-NexusOS হলো একটি প্রস্তাবিত কেন্দ্রীয় ব্যবসায়িক ব্যবস্থাপনা প্ল্যাটফর্ম, যার মাধ্যমে একটি প্রতিষ্ঠানের বিভিন্ন বিভাগ একই সিস্টেম ব্যবহার করে নিজেদের কার্যক্রম পরিচালনা করতে পারবে।
-
-সাধারণত একটি প্রতিষ্ঠানে HR, Finance, Inventory, Procurement, Sales এবং Project Management বিভাগ আলাদা সফটওয়্যার, Excel ফাইল অথবা ম্যানুয়াল যোগাযোগের মাধ্যমে কাজ করে।
-
-এর ফলে তথ্যের মধ্যে সমন্বয় থাকে না, একই তথ্য একাধিকবার সংরক্ষণ করতে হয়, অনুমোদন পেতে দেরি হয় এবং প্রতিষ্ঠানের সামগ্রিক অবস্থা পর্যবেক্ষণ করা কঠিন হয়ে পড়ে।
-
-NexusOS এই সমস্যাগুলো সমাধানের জন্য একটি কেন্দ্রীয় প্ল্যাটফর্ম তৈরি করার পরিকল্পনা করে।
-
-এখানে প্রতিটি বিভাগ নিজস্ব কাজ পরিচালনা করতে পারবে এবং অনুমোদিত তথ্যের মাধ্যমে অন্য বিভাগের সঙ্গে যুক্ত থাকতে পারবে।
-
-এই প্রকল্পের সবচেয়ে গুরুত্বপূর্ণ বৈশিষ্ট্য হলো **Workflow Automation Engine**।
-
-উদাহরণ:
-
-ধরা যাক, একটি প্রতিষ্ঠানের IT বিভাগ পাঁচটি ল্যাপটপ কিনতে চায়।
-
-১. IT বিভাগ একটি Purchase Request তৈরি করবে।
-
-২. Department Manager অনুরোধটি পর্যালোচনা করবেন।
-
-৩. Finance বিভাগ বাজেট যাচাই করবে।
-
-৪. Procurement বিভাগ সরবরাহকারী নির্বাচন করবে।
-
-৫. অনুমোদিত ব্যক্তি Purchase Order অনুমোদন করবেন।
-
-৬. পণ্য হাতে পাওয়ার পর Inventory বিভাগ স্টক আপডেট করবে।
-
-৭. IT বিভাগ কর্মীদের মধ্যে ল্যাপটপ বরাদ্দ করবে।
-
-৮. Finance বিভাগ ব্যয়ের হিসাব সংরক্ষণ করবে।
-
-৯. Management Dashboard-এ নতুন তথ্য দেখা যাবে।
-
-এই পুরো প্রক্রিয়াটি একটি সংযুক্ত সিস্টেমের মাধ্যমে পরিচালিত হবে।
-
-### ১.৩ প্রকল্পের লক্ষ্য
-
-এমন একটি সমন্বিত ডিজিটাল পরিবেশ তৈরি করা, যেখানে একটি প্রতিষ্ঠানের সকল বিভাগ একই প্ল্যাটফর্ম ব্যবহার করে কাজ করতে পারবে।
-
-### ১.৪ স্লোগান
-
-**একটি প্ল্যাটফর্ম। প্রতিটি বিভাগ। সংযুক্ত কার্যপ্রবাহ।**
-
----
-
-## ২. সমস্যার বিবরণ
-
-অনেক প্রতিষ্ঠানে বিভিন্ন বিভাগের কার্যক্রম আলাদা আলাদাভাবে পরিচালিত হয়।
-
-সাধারণ সমস্যাগুলো হলো:
-
-- কর্মীদের তথ্য বিভিন্ন Excel ফাইলে সংরক্ষিত থাকে।
-- Attendance এবং Payroll আলাদাভাবে পরিচালিত হয়।
-- Purchase Request অনুমোদনের জন্য ম্যানুয়াল যোগাযোগ করতে হয়।
-- Inventory-এর তথ্য সময়মতো আপডেট হয় না।
-- Finance বিভাগ দেরিতে ব্যয়ের তথ্য পায়।
-- Management সহজে সব বিভাগের অবস্থা দেখতে পারে না।
-- Approval Process সম্পন্ন হতে অনেক সময় লাগে।
-- Business Report তৈরি করতে ম্যানুয়াল কাজ করতে হয়।
-- গুরুত্বপূর্ণ কার্যক্রমের ইতিহাস খুঁজে পাওয়া কঠিন হয়।
-- একই তথ্য একাধিকবার সংরক্ষণের কারণে অসামঞ্জস্য তৈরি হয়।
-
-### ২.১ প্রস্তাবিত সমাধান
-
-NexusOS-এর মাধ্যমে পাওয়া যাবে:
-
-- একটি কেন্দ্রীয় ডেটাবেজ।
-- বিভাগভিত্তিক ব্যবস্থাপনা।
-- Role-Based Access Control।
-- স্বয়ংক্রিয় Approval Workflow।
-- Finance এবং Inventory-এর সমন্বয়।
-- কেন্দ্রীয় Document Management।
-- Real-time Notification।
-- Business Analytics এবং Reporting।
-- কার্যক্রমের সম্পূর্ণ Audit History।
-- একাধিক Branch পরিচালনার সুবিধা।
-
----
-
-## ৩. প্রকল্পের উদ্দেশ্য
-
-### ৩.১ প্রধান উদ্দেশ্য
-
-১. প্রতিষ্ঠানের সকল তথ্য একটি প্ল্যাটফর্মে সংরক্ষণ করা।
-
-২. বিভিন্ন বিভাগের কার্যক্রমের মধ্যে সংযোগ তৈরি করা।
-
-৩. পুনরাবৃত্তিমূলক Approval Process স্বয়ংক্রিয় করা।
-
-৪. প্রতিষ্ঠানের অভ্যন্তরীণ যোগাযোগ উন্নত করা।
-
-৫. ম্যানুয়াল কাজ এবং একই তথ্য বারবার সংরক্ষণ কমানো।
-
-৬. সঠিক আর্থিক ও পরিচালনাগত রিপোর্ট তৈরি করা।
-
-৭. প্রতিষ্ঠানের স্বচ্ছতা ও জবাবদিহিতা বৃদ্ধি করা।
-
-৮. অনুমোদিত ব্যবহারকারীর মাধ্যমে তথ্যের নিরাপত্তা নিশ্চিত করা।
-
-৯. একাধিক Branch এবং Department পরিচালনা করা।
-
-১০. ভবিষ্যতে নতুন Business Feature যুক্ত করার উপযোগী সিস্টেম তৈরি করা।
-
-### ৩.২ নির্দিষ্ট উদ্দেশ্য
-
-| ID | উদ্দেশ্য | প্রত্যাশিত ফলাফল |
-|---|---|---|
-| OBJ-01 | কেন্দ্রীয় ব্যবস্থাপনা | একটি সমন্বিত প্ল্যাটফর্ম |
-| OBJ-02 | কর্মী ব্যবস্থাপনা | সুসংগঠিত HR তথ্য |
-| OBJ-03 | আর্থিক সমন্বয় | সংযুক্ত আর্থিক কার্যক্রম |
-| OBJ-04 | Inventory Tracking | সঠিক স্টক তথ্য |
-| OBJ-05 | Workflow Automation | দ্রুত Approval Process |
-| OBJ-06 | Business Analytics | উন্নত সিদ্ধান্ত গ্রহণ |
-| OBJ-07 | Security | নিয়ন্ত্রিত তথ্যের প্রবেশাধিকার |
-| OBJ-08 | Multi-Branch Support | একাধিক শাখা পরিচালনা |
-
----
-
-## ৪. সিস্টেমের পরিধি
-
-### ৪.১ অন্তর্ভুক্ত বিষয়
-
-প্রস্তাবিত সিস্টেমে থাকবে:
-
-- Organization Management।
-- Branch Management।
-- Employee এবং HR Management।
-- Attendance Management।
-- Leave Management।
-- Payroll Management।
-- Finance এবং Accounting।
-- Inventory Management।
-- Warehouse Management।
-- Procurement Management।
-- Supplier Management।
-- Customer Relationship Management।
-- Sales Management।
-- Project Management।
-- Workflow Automation।
-- Internal Communication।
-- Document Management।
-- Notification System।
-- Analytics এবং Reporting।
-- User Role এবং Permission।
-- Audit Logs।
-- Multi-Branch Support।
-
-### ৪.২ প্রথম সংস্করণে অন্তর্ভুক্ত নয়
-
-প্রথম Prototype-এ নিচের বিষয়গুলো বাধ্যতামূলক নয়:
-
-- পূর্ণাঙ্গ Banking Integration।
-- সরকারি Tax Submission Integration।
-- Advanced Biometric Hardware Integration।
-- Native Android এবং iOS Application।
-- Microservices ভিত্তিক বড় Enterprise Infrastructure।
-- AI-এর মাধ্যমে স্বয়ংক্রিয় সংবেদনশীল সিদ্ধান্ত গ্রহণ।
-- জটিল আন্তর্জাতিক Accounting Compliance।
-- স্বয়ংক্রিয় Supplier Payment Processing।
-
-ভবিষ্যতে প্রয়োজন অনুযায়ী এগুলো যুক্ত করা যেতে পারে।
-
----
-
-## ৫. ব্যবহারকারী এবং দায়িত্ব
-
-### ৫.১ প্রধান Stakeholder
-
-| ব্যবহারকারী | দায়িত্ব |
-|---|---|
-| Super Administrator | পুরো প্ল্যাটফর্ম পরিচালনা |
-| Company Administrator | কোম্পানির Configuration |
-| HR Manager | কর্মী ও HR কার্যক্রম |
-| Finance Manager | আর্থিক কার্যক্রম |
-| Procurement Officer | ক্রয় কার্যক্রম |
-| Inventory Manager | স্টক ও Warehouse |
-| Sales Manager | বিক্রয় কার্যক্রম |
-| Project Manager | Project ও Task পরিচালনা |
-| Department Manager | বিভাগের Approval |
-| Employee | নিজের তথ্য এবং আবেদন |
-| Executive | প্রতিষ্ঠানের রিপোর্ট পর্যবেক্ষণ |
-
-### ৫.২ Role-Based Access Control (RBAC)
-
-RBAC-এর মাধ্যমে প্রত্যেক ব্যবহারকারীর দায়িত্ব অনুযায়ী অনুমতি নির্ধারণ করা হবে।
-
-| Role | প্রধান অনুমতি |
-|---|---|
-| Super Admin | Platform Administration |
-| Company Admin | Company Configuration |
-| HR Manager | HR Management |
-| Finance Manager | Finance Management |
-| Procurement Officer | Purchase Management |
-| Inventory Manager | Inventory Management |
-| Sales Manager | Sales Management |
-| Project Manager | Project Management |
-| Department Manager | Department Approval |
-| Employee | নিজের Profile এবং Request |
-| Executive | অনুমোদিত Report দেখা |
-
-শুধু Role থাকলেই সব তথ্য দেখা যাবে না। Backend-এ ব্যবহারকারীর Organization, Branch, Department, Resource Ownership এবং Permission যাচাই করতে হবে।
-
----
-
-## ৬. সিস্টেমের মডিউলসমূহ
-
-### ৬.১ Organization Management
-
-এই মডিউলে প্রতিষ্ঠানের সাংগঠনিক কাঠামো পরিচালিত হবে।
-
-ফিচার:
-
-- Company Profile।
-- Branch তৈরি।
-- Department তৈরি।
-- Designation Management।
-- Organizational Hierarchy।
-- Organization Chart।
-- Branch Transfer।
-- Department Assignment।
-- Company Settings।
-
-### ৬.২ Human Resource Management
-
-কর্মীদের তথ্য এবং চাকরিসংক্রান্ত কার্যক্রম পরিচালিত হবে।
-
-ফিচার:
-
-- Employee Registration।
-- Employee Profile।
-- Employee ID।
-- Employee Document।
-- Employment History।
-- Department Assignment।
-- Designation Management।
-- Promotion Record।
-- Resignation Record।
-- Performance Information।
-- Employee Status।
-
-### ৬.৩ Attendance Management
-
-কর্মীদের উপস্থিতি এবং কাজের সময় হিসাব করা হবে।
-
-ফিচার:
-
-- Check-in।
-- Check-out।
-- Working Hour Calculation।
-- Late Arrival Detection।
-- Early Departure Detection।
-- Shift Schedule।
-- Attendance Correction।
-- Monthly Attendance Report।
-- Leave Integration।
-
-### ৬.৪ Leave Management
-
-কর্মীরা ছুটির আবেদন করতে পারবেন এবং অনুমোদিত কর্মকর্তা আবেদন গ্রহণ বা বাতিল করতে পারবেন।
-
-ফিচার:
-
-- Leave Application।
-- Leave Category।
-- Leave Balance।
-- Manager Approval।
-- Rejection Reason।
-- Leave History।
-- Attendance Synchronization।
-
-### ৬.৫ Payroll Management
-
-কর্মীদের বেতন এবং বেতনসংক্রান্ত তথ্য পরিচালিত হবে।
-
-ফিচার:
-
-- Salary Structure।
-- Basic Salary।
-- Allowances।
-- Bonuses।
-- Deductions।
-- Salary Calculation।
-- Payroll Approval।
-- Payslip Generation।
-- Payroll History।
-
-বেতন হিসাব প্রতিষ্ঠানের নীতি এবং প্রযোজ্য নিয়ম অনুসারে করতে হবে।
-
-### ৬.৬ Finance and Accounting
-
-প্রতিষ্ঠানের আয়-ব্যয় এবং আর্থিক তথ্য পরিচালিত হবে।
-
-ফিচার:
-
-- Income Records।
-- Expense Records।
-- Department Budget।
-- Invoice।
-- Accounts Payable।
-- Accounts Receivable।
-- Payment Records।
-- Cash Flow Report।
-- Profit and Loss Report।
-- Double-Entry Accounting Foundation।
-- Financial Transaction History।
-
-### ৬.৭ Inventory Management
-
-পণ্য এবং স্টক ব্যবস্থাপনা করা হবে।
-
-ফিচার:
-
-- Product Registration।
-- Product Categories।
-- SKU এবং Barcode।
-- Warehouse Management।
-- Branch Stock।
-- Stock In।
-- Stock Out।
-- Stock Transfer।
-- Low Stock Alert।
-- Asset Tracking।
-- Stock History।
-
-### ৬.৮ Procurement Management
-
-প্রতিষ্ঠানের পণ্য বা সেবা ক্রয়ের কার্যক্রম পরিচালিত হবে।
-
-ফিচার:
-
-- Purchase Request।
-- Supplier Registration।
-- Supplier Quotation।
-- Price Comparison।
-- Purchase Approval।
-- Purchase Order।
-- Goods Receiving।
-- Supplier Invoice।
-- Supplier Payment Tracking।
-
-### ৬.৯ CRM
-
-গ্রাহক এবং সম্ভাব্য গ্রাহকদের তথ্য পরিচালিত হবে।
-
-ফিচার:
-
-- Customer Profile।
-- Lead Management।
-- Follow-up Records।
-- Communication History।
-- Customer Feedback।
-- Support Ticket।
-- Customer Activity History।
-
-### ৬.১০ Sales Management
-
-প্রতিষ্ঠানের বিক্রয় কার্যক্রম পরিচালিত হবে।
-
-ফিচার:
-
-- Product Catalog।
-- Customer Quotation।
-- Sales Order।
-- Order Approval।
-- Delivery Tracking।
-- Sales Invoice।
-- Payment Tracking।
-- Product Return।
-- Sales Report।
-
-### ৬.১১ Project Management
-
-প্রতিষ্ঠানের বিভিন্ন Project এবং Task পরিচালিত হবে।
-
-ফিচার:
-
-- Project Creation।
-- Project Budget।
-- Team Assignment।
-- Task Creation।
-- Task Priority।
-- Deadline।
-- Kanban Board।
-- Gantt Chart।
-- Milestone।
-- Time Tracking।
-- Project Expense।
-- Progress Report।
-
-### ৬.১২ Workflow Automation Engine
-
-এটি NexusOS-এর সবচেয়ে গুরুত্বপূর্ণ এবং বিশেষ বৈশিষ্ট্য।
-
-এই Engine-এর মাধ্যমে বিভিন্ন বিভাগের কাজ স্বয়ংক্রিয়ভাবে একটির পর আরেকটি ধাপে সম্পন্ন করা যাবে।
-
-এর প্রধান উপাদান:
-
-| Component | কাজ |
-|---|---|
-| Trigger | Workflow শুরু করে |
-| Condition | কোনো শর্ত যাচাই করে |
-| Action | নির্দিষ্ট কাজ সম্পন্ন করে |
-| Approval | অনুমোদন চায় |
-| Delay | নির্দিষ্ট সময় অপেক্ষা করে |
-| Notification | ব্যবহারকারীকে জানায় |
-| Execution Log | কার্যক্রমের ইতিহাস রাখে |
-| Retry | ব্যর্থ কাজ পুনরায় চালানোর ব্যবস্থা |
-| Versioning | Workflow-এর সংস্করণ সংরক্ষণ |
-
-**উদাহরণ:**
-
-```text
-Purchase Request তৈরি
-          |
-          v
-Department Manager Approval
-          |
-          v
-Budget যাচাই
-          |
-          v
-Finance Approval
-          |
-          v
-Procurement Processing
-          |
-          v
-Purchase Order তৈরি
-          |
-          v
-পণ্য গ্রহণ
-          |
-          v
-Inventory Update
-          |
-          v
-Finance Expense Record
-          |
-          v
-Workflow Complete
-```
-
-অন্যান্য উদাহরণ:
-
-- Leave Approved → Attendance Update।
-- Stock কমে গেলে → Notification।
-- Sales Order Complete → Inventory Update।
-- Salary Processed → Finance Record।
-- Project Deadline কাছে এলে → Manager Alert।
-- Employee Resignation Approved → Account Deactivation Workflow।
-
-### ৬.১৩ Communication Management
-
-ফিচার:
-
-- Internal Messages।
-- Announcements।
-- Department Notices।
-- Comments।
-- Mentions।
-- Email Notifications।
-- Push Notifications।
-- In-app Notifications।
-
-### ৬.১৪ Document Management
-
-ফিচার:
-
-- PDF Upload।
-- Image Upload।
-- Document Categories।
-- Access Permissions।
-- Version History।
-- Expiry Reminders।
-- Employee Documents।
-- Purchase এবং Invoice Documents।
-
-### ৬.১৫ Analytics and Business Intelligence
-
-Management-এর জন্য প্রতিষ্ঠানের বিভিন্ন তথ্য এক জায়গায় দেখা যাবে।
-
-ফিচার:
-
-- Company Dashboard।
-- Revenue Statistics।
-- Expense Statistics।
-- Profit Reports।
-- Employee Statistics।
-- Attendance Reports।
-- Low Stock Reports।
-- Pending Approval Statistics।
-- Branch Comparison।
-- Department Comparison।
-- Report Export।
-
-### ৬.১৬ AI Business Assistant — ভবিষ্যৎ ফিচার
-
-ভবিষ্যতে AI Assistant যুক্ত করা যেতে পারে।
-
-উদাহরণ:
-
-- এই মাসে কোন Department সবচেয়ে বেশি খরচ করেছে?
-- কোন পণ্যের Stock কম?
-- কতগুলো Leave Application Pending আছে?
-- এই Quarter-এ মোট Revenue কত?
-
-AI Assistant শুধু সেই তথ্য ব্যবহার করতে পারবে, যেগুলো দেখার অনুমতি সংশ্লিষ্ট ব্যবহারকারীর রয়েছে।
-
-অনুমোদন ছাড়া AI কোনো সংবেদনশীল HR বা Financial Record পরিবর্তন করতে পারবে না।
-
----
-
-## ৭. সফটওয়্যার রিকোয়ারমেন্ট স্পেসিফিকেশন (SRS)
-
-### ৭.১ Functional Requirements
-
-Functional Requirements হলো সিস্টেম কী কী কাজ করতে পারবে তার বিস্তারিত বিবরণ।
-
-#### Organization Management
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-ORG-001 | অনুমোদিত ব্যবহারকারী Company Profile তৈরি করতে পারবেন। | High |
-| FR-ORG-002 | একাধিক Branch পরিচালনা করা যাবে। | High |
-| FR-ORG-003 | Department তৈরি করা যাবে। | High |
-| FR-ORG-004 | Designation পরিচালনা করা যাবে। | High |
-| FR-ORG-005 | Organizational Hierarchy সংরক্ষণ করা যাবে। | Medium |
-
-#### Authentication and Authorization
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-AUTH-001 | ব্যবহারকারীর Authentication করতে হবে। | High |
-| FR-AUTH-002 | Backend-এ Firebase ID Token যাচাই করতে হবে। | High |
-| FR-AUTH-003 | ব্যবহারকারীর Role নির্ধারণ করতে হবে। | High |
-| FR-AUTH-004 | Protected API-তে Permission যাচাই করতে হবে। | High |
-| FR-AUTH-005 | User Account Deactivate করা যাবে। | High |
-| FR-AUTH-006 | Organization এবং Department অনুযায়ী Access সীমাবদ্ধ করতে হবে। | High |
-
-#### Human Resource Management
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-HR-001 | Employee Profile তৈরি করতে হবে। | High |
-| FR-HR-002 | Employee Information Update করতে হবে। | High |
-| FR-HR-003 | Employment History সংরক্ষণ করতে হবে। | Medium |
-| FR-HR-004 | Employee Documents পরিচালনা করতে হবে। | Medium |
-| FR-HR-005 | Promotion এবং Resignation Information সংরক্ষণ করতে হবে। | Medium |
-
-#### Attendance and Leave
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-ATT-001 | Check-in এবং Check-out রেকর্ড করতে হবে। | High |
-| FR-ATT-002 | Working Hours হিসাব করতে হবে। | High |
-| FR-ATT-003 | Late Arrival শনাক্ত করতে হবে। | Medium |
-| FR-ATT-004 | Attendance Report তৈরি করতে হবে। | High |
-| FR-LEAVE-001 | Employee Leave Application জমা দিতে পারবেন। | High |
-| FR-LEAVE-002 | অনুমোদিত Manager আবেদন Approve বা Reject করতে পারবেন। | High |
-| FR-LEAVE-003 | Leave Balance সংরক্ষণ করতে হবে। | High |
-| FR-LEAVE-004 | Leave Approved হলে Attendance Update করতে হবে। | High |
-
-#### Finance
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-FIN-001 | Income এবং Expense সংরক্ষণ করতে হবে। | High |
-| FR-FIN-002 | Department Budget পরিচালনা করতে হবে। | High |
-| FR-FIN-003 | Financial Report তৈরি করতে হবে। | High |
-| FR-FIN-004 | Invoice পরিচালনা করতে হবে। | Medium |
-| FR-FIN-005 | Payment Record সংরক্ষণ করতে হবে। | High |
-| FR-FIN-006 | Double-Entry Accounting সমর্থন করতে হবে। | Medium |
-
-#### Inventory and Procurement
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-INV-001 | Product Registration করতে হবে। | High |
-| FR-INV-002 | Stock Quantity Track করতে হবে। | High |
-| FR-INV-003 | Warehouse এবং Branch Stock পরিচালনা করতে হবে। | High |
-| FR-INV-004 | Stock Transfer রেকর্ড করতে হবে। | High |
-| FR-INV-005 | Low Stock Alert তৈরি করতে হবে। | Medium |
-| FR-PROC-001 | Purchase Request জমা দেওয়া যাবে। | High |
-| FR-PROC-002 | Supplier Management করতে হবে। | High |
-| FR-PROC-003 | Purchase Order পরিচালনা করতে হবে। | High |
-| FR-PROC-004 | Received Goods রেকর্ড করতে হবে। | High |
-
-#### CRM and Sales
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-CRM-001 | Customer Profile সংরক্ষণ করতে হবে। | Medium |
-| FR-CRM-002 | Lead এবং Follow-up পরিচালনা করতে হবে। | Medium |
-| FR-SALES-001 | Sales Order তৈরি করতে হবে। | High |
-| FR-SALES-002 | Sales Invoice তৈরি করতে হবে। | High |
-| FR-SALES-003 | Customer Payment Track করতে হবে। | High |
-| FR-SALES-004 | Sales Fulfillment-এর পর Inventory Update করতে হবে। | High |
-
-#### Project Management
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-PM-001 | Project তৈরি করা যাবে। | Medium |
-| FR-PM-002 | Task Assign করা যাবে। | Medium |
-| FR-PM-003 | Task Progress Update করা যাবে। | Medium |
-| FR-PM-004 | Project Deadline দেখা যাবে। | Medium |
-| FR-PM-005 | Project Progress Report তৈরি করতে হবে। | Medium |
-
-#### Workflow Automation
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-WF-001 | অনুমোদিত ব্যবহারকারী Workflow তৈরি করতে পারবেন। | High |
-| FR-WF-002 | Trigger Configuration সমর্থন করতে হবে। | High |
-| FR-WF-003 | Workflow Condition যাচাই করতে হবে। | High |
-| FR-WF-004 | নির্ধারিত Action Execute করতে হবে। | High |
-| FR-WF-005 | Approval Step সমর্থন করতে হবে। | High |
-| FR-WF-006 | Workflow Execution History রাখতে হবে। | High |
-| FR-WF-007 | Recoverable Failure-এর জন্য Retry ব্যবস্থা রাখতে হবে। | Medium |
-| FR-WF-008 | Workflow Version সংরক্ষণ করতে হবে। | Medium |
-| FR-WF-009 | Unauthorized Workflow Modification প্রতিরোধ করতে হবে। | High |
-
-#### Communication, Documents and Reports
-
-| Requirement ID | প্রয়োজনীয়তা | Priority |
-|---|---|---|
-| FR-COM-001 | In-app Notification পাঠাতে হবে। | Medium |
-| FR-COM-002 | Organizational Announcement সমর্থন করতে হবে। | Medium |
-| FR-DOC-001 | অনুমোদিত ব্যবহারকারী Document Upload করতে পারবেন। | Medium |
-| FR-DOC-002 | Document Access Permission নিয়ন্ত্রণ করতে হবে। | High |
-| FR-REP-001 | Business Report তৈরি করতে হবে। | High |
-| FR-REP-002 | Date-based Filtering সমর্থন করতে হবে। | Medium |
-| FR-REP-003 | Permission অনুযায়ী Report Access নিয়ন্ত্রণ করতে হবে। | High |
-| FR-AUD-001 | গুরুত্বপূর্ণ Administrative Activity রেকর্ড করতে হবে। | High |
-
-### ৭.২ Non-Functional Requirements
-
-| ID | Category | প্রয়োজনীয়তা |
-|---|---|---|
-| NFR-001 | Security | সংবেদনশীল কাজের জন্য Server-side Authorization থাকতে হবে। |
-| NFR-002 | Performance | সাধারণ কাজ নির্ধারিত Performance Target-এর মধ্যে সম্পন্ন হতে হবে। |
-| NFR-003 | Scalability | ব্যবহারকারী এবং ডেটা বাড়লেও সিস্টেম সম্প্রসারণযোগ্য হতে হবে। |
-| NFR-004 | Reliability | ব্যর্থ অপারেশনে Database Inconsistency হওয়া যাবে না। |
-| NFR-005 | Usability | Interface সহজবোধ্য ও সামঞ্জস্যপূর্ণ হতে হবে। |
-| NFR-006 | Maintainability | Modular Code Structure বজায় রাখতে হবে। |
-| NFR-007 | Availability | Deployment-এর Availability Expectation নির্ধারণ করতে হবে। |
-| NFR-008 | Compatibility | আধুনিক Browser-এ কাজ করতে হবে। |
-| NFR-009 | Accessibility | Keyboard Navigation এবং Readable Contrast সমর্থন করতে হবে। |
-| NFR-010 | Data Integrity | Finance এবং Inventory Data সঠিক রাখতে হবে। |
-| NFR-011 | Auditability | গুরুত্বপূর্ণ পরিবর্তনের ইতিহাস রাখতে হবে। |
-| NFR-012 | Privacy | অনুমতি ছাড়া ব্যক্তিগত বা সাংগঠনিক তথ্য দেখা যাবে না। |
-| NFR-013 | Backup | Database Backup এবং Recovery ব্যবস্থা থাকতে হবে। |
-| NFR-014 | Localization | ভবিষ্যতে একাধিক ভাষা সমর্থনের উপযোগী হতে হবে। |
-
----
-
-## ৮. Use Case
-
-### ৮.১ প্রধান Use Case
-
-| Use Case ID | Use Case | Actor |
-|---|---|---|
-| UC-01 | Login | সকল ব্যবহারকারী |
-| UC-02 | Organization পরিচালনা | Company Admin |
-| UC-03 | Employee পরিচালনা | HR Manager |
-| UC-04 | Leave Application | Employee |
-| UC-05 | Leave Approval | Department Manager |
-| UC-06 | Payroll পরিচালনা | HR / Finance |
-| UC-07 | Purchase Request | Employee / Manager |
-| UC-08 | Purchase Approval | Manager / Finance |
-| UC-09 | Inventory পরিচালনা | Inventory Manager |
-| UC-10 | Sales Order তৈরি | Sales Manager |
-| UC-11 | Project পরিচালনা | Project Manager |
-| UC-12 | Workflow Configure | Company Admin |
-| UC-13 | Report দেখা | Authorized Management |
-| UC-14 | Audit Log দেখা | Authorized Administrator |
-
-### ৮.২ Use Case Diagram
-
-ইংরেজি অংশের Use Case Diagram-এ NexusOS-এর প্রধান Actor এবং তাদের কার্যক্রম দেখানো হয়েছে। Diagram-এর Mermaid Source এই README-তেই সংরক্ষিত রয়েছে।
-
----
-
-## ৯. Business Workflow Design
-
-### ৯.১ Purchase Workflow
-
-একটি Purchase Request কীভাবে বিভিন্ন বিভাগের মধ্য দিয়ে সম্পন্ন হবে:
-
-১. IT বিভাগ Purchase Request তৈরি করবে।
-
-২. Department Manager অনুরোধ যাচাই করবেন।
-
-৩. Finance বিভাগ Budget যাচাই করবে।
-
-৪. Budget Available থাকলে Finance Approval দেবে।
-
-৫. Procurement Supplier নির্বাচন করবে।
-
-৬. Purchase Order তৈরি হবে।
-
-৭. পণ্য গ্রহণ করা হবে।
-
-৮. Inventory Stock Update হবে।
-
-৯. IT বিভাগ পণ্য বরাদ্দ করবে।
-
-১০. Finance Expense Record করবে।
-
-১১. Dashboard Update হবে।
-
-ইংরেজি অংশের Purchase Workflow Mermaid Diagram এই প্রক্রিয়ার সম্পূর্ণ Flow দেখায়।
-
-### ৯.২ Leave Approval Workflow
-
-১. Employee Leave Application জমা দেবে।
-
-২. System Leave Balance যাচাই করবে।
-
-৩. যোগ্য হলে Manager-এর কাছে পাঠাবে।
-
-৪. Manager আবেদন Approve অথবা Reject করবেন।
-
-৫. Approve হলে Leave Balance Update হবে।
-
-৬. Attendance Update হবে।
-
-৭. Employee Notification পাবে।
-
-ইংরেজি অংশের Leave Workflow Diagram-এ সম্পূর্ণ প্রক্রিয়াটি দেখানো হয়েছে।
-
-### ৯.৩ Workflow Engine
-
-Workflow Engine-এর সাধারণ কার্যপ্রণালি:
-
-১. কোনো Business Event তৈরি হবে।
-
-২. Trigger Listener Event শনাক্ত করবে।
-
-৩. Active Workflow লোড হবে।
-
-৪. Condition যাচাই করা হবে।
-
-৫. শর্ত পূরণ হলে Action Execute হবে।
-
-৬. প্রয়োজন হলে Approval Task তৈরি হবে।
-
-৭. প্রতিটি ধাপের Execution Log সংরক্ষণ করা হবে।
-
-৮. সব ধাপ সফল হলে Workflow Complete হবে।
-
----
-
-## ১০. System Architecture
-
-### ১০.১ Architecture নির্বাচন
-
-NexusOS-এর প্রথম সংস্করণে Modular Monolith Architecture ব্যবহার করার পরিকল্পনা করা হয়েছে।
-
-এর অর্থ হলো Backend একটি Application হিসেবে Deploy হবে, কিন্তু এর ভেতরে বিভিন্ন Business Module আলাদা থাকবে।
-
-যেমন:
-
-- Organization Module।
-- HR Module।
-- Finance Module।
-- Inventory Module।
-- Procurement Module।
-- Sales Module।
-- Workflow Module।
-- Reporting Module।
-
-### ১০.২ কেন Modular Monolith?
-
-- Development তুলনামূলক সহজ।
-- Deployment Complexity কম।
-- Debugging সহজ।
-- Module অনুযায়ী Code Organize করা যায়।
-- Related Database Operation-এর জন্য Transaction ব্যবহার করা যায়।
-- ভবিষ্যতে প্রয়োজন হলে Microservices-এ রূপান্তর করা সম্ভব।
-
-### ১০.৩ High-Level Architecture
-
-সিস্টেমের সাধারণ কার্যপ্রবাহ:
-
-```text
-User
-  |
-  v
-React Frontend
-  |
-  +----> Firebase Authentication
-  |
-  v
-Spring Boot REST API
-  |
-  +----> Organization
-  +----> HR
-  +----> Attendance
-  +----> Finance
-  +----> Inventory
-  +----> Procurement
-  +----> CRM
-  +----> Sales
-  +----> Project
-  +----> Workflow Engine
-  +----> Reporting
-  +----> Audit
-  |
-  v
-PostgreSQL Database
-  |
-  +----> Supabase Storage
-```
-
-ইংরেজি অংশের Architecture এবং Component Diagram-এ প্রতিটি অংশের সংযোগ দেখানো হয়েছে।
-
-### ১০.৪ Request Lifecycle
-
-১. ব্যবহারকারী React Application খুলবে।
-
-২. Firebase Authentication ব্যবহারকারীকে Authenticate করবে।
-
-৩. Frontend একটি Identity Token পাবে।
-
-৪. API Request-এর সঙ্গে Token পাঠানো হবে।
-
-৫. Spring Security Token যাচাই করবে।
-
-৬. Backend ব্যবহারকারীর Role এবং Organizational Scope যাচাই করবে।
-
-৭. সংশ্লিষ্ট Module Request Process করবে।
-
-৮. PostgreSQL থেকে তথ্য নেওয়া বা সংরক্ষণ করা হবে।
-
-৯. Backend Response পাঠাবে।
-
-১০. Frontend Interface Update করবে।
-
----
-
-## ১১. Sequence Diagram-এর ব্যাখ্যা
-
-### ১১.১ Login Sequence
-
-Login-এর সময়:
-
-১. User Login Information প্রদান করবে।
-
-২. React Frontend Firebase-এ Authentication Request পাঠাবে।
-
-৩. Firebase ID Token প্রদান করবে।
-
-৪. Frontend Backend-এ Token পাঠাবে।
-
-৫. Backend Token যাচাই করবে।
-
-৬. Database থেকে User এবং Permission Information লোড হবে।
-
-৭. Authorized Response Frontend-এ পাঠানো হবে।
-
-### ১১.২ Leave Approval Sequence
-
-১. Employee Leave Request Submit করবে।
-
-২. Backend Request Validate করবে।
-
-৩. HR Service Leave Balance যাচাই করবে।
-
-৪. Database-এ Pending Request সংরক্ষণ হবে।
-
-৫. Workflow Engine Approval Task তৈরি করবে।
-
-৬. Manager Notification পাবেন।
-
-৭. Manager Request Approve করবেন।
-
-৮. Workflow Engine Request Status Update করবে।
-
-৯. HR Service Leave Balance এবং Attendance Update করবে।
-
-১০. Employee ফলাফল দেখতে পাবে।
-
-### ১১.৩ Purchase Request Sequence
-
-১. Employee Purchase Request তৈরি করবে।
-
-২. Procurement Service Request Validate করবে।
-
-৩. Database-এ Request সংরক্ষণ হবে।
-
-৪. Workflow Engine Approval Process শুরু করবে।
-
-৫. Finance Budget যাচাই করবে।
-
-৬. Approval পাওয়া গেলে Procurement Purchase Order তৈরি করবে।
-
-৭. Goods Receive হলে Inventory Update হবে।
-
-৮. সংশ্লিষ্ট তথ্য Database-এ সংরক্ষণ হবে।
-
----
-
-## ১২. Class Diagram-এর ব্যাখ্যা
-
-Class Diagram-এ NexusOS-এর গুরুত্বপূর্ণ Object এবং তাদের সম্পর্ক দেখানো হয়েছে।
-
-প্রধান Class:
-
-- Organization
-- Branch
-- Department
-- User
-- Employee
-- Role
-- Permission
-- LeaveRequest
-- PurchaseRequest
-- Workflow
-- WorkflowExecution
-- Product
-- StockMovement
-- FinancialTransaction
-
-উদাহরণ:
-
-একটি Organization-এর একাধিক Branch থাকতে পারে।
-
-একটি Branch-এর একাধিক Department থাকতে পারে।
-
-একটি Department-এর একাধিক Employee থাকতে পারে।
-
-একটি Workflow-এর একাধিক WorkflowExecution থাকতে পারে।
-
-এই সম্পর্কগুলো ইংরেজি অংশের Class Diagram-এ দেখানো হয়েছে।
-
----
-
-## ১৩. Workflow State Diagram-এর ব্যাখ্যা
-
-একটি Workflow বিভিন্ন State-এর মধ্য দিয়ে অগ্রসর হবে।
-
-প্রধান State:
-
-- Draft
-- Active
-- Running
-- Waiting Approval
-- Rejected
-- Completed
-- Failed
-- Cancelled
-
-উদাহরণ:
-
-একটি Workflow প্রথমে Draft অবস্থায় থাকবে।
-
-Publish করার পর Active হবে।
-
-Trigger পাওয়া গেলে Running হবে।
-
-Approval প্রয়োজন হলে Waiting Approval হবে।
-
-অনুমোদন পেলে আবার Running হবে।
-
-সব কাজ সফল হলে Completed হবে।
-
-কোনো সমস্যা হলে Failed হবে এবং অনুমোদিত Retry Process চালানো যেতে পারে।
-
-প্রতিটি State Transition Backend থেকে Validate করতে হবে।
-
----
-
-## ১৪. Entity Relationship Diagram (ERD) এবং Database Design
-
-### ১৪.১ Database-এর প্রধান Entity
-
-- Organizations
-- Branches
-- Departments
-- Users
-- Employees
-- Roles
-- Permissions
-- User Roles
-- Role Permissions
-- Attendance Records
-- Leave Requests
-- Payroll Records
-- Products
-- Stock Movements
-- Suppliers
-- Purchase Requests
-- Purchase Orders
-- Purchase Order Items
-- Customers
-- Sales Orders
-- Sales Order Items
-- Financial Transactions
-- Workflows
-- Workflow Executions
-- Workflow Tasks
-- Audit Logs
-
-### ১৪.২ Database Design Principles
-
-- Primary Key হিসেবে UUID ব্যবহার করা হবে।
-- Foreign Key দিয়ে Relationship বজায় রাখা হবে।
-- Frequently Queried Field-এ Index ব্যবহার করা হবে।
-- Timestamp UTC-তে সংরক্ষণ করা হবে।
-- Related Operation-এর জন্য Database Transaction ব্যবহার করা হবে।
-- Monetary Value-এর জন্য Decimal Type ব্যবহার করা হবে।
-- গুরুত্বপূর্ণ Financial Record Audit-এর প্রয়োজনে সংরক্ষণ করতে হবে।
-- প্রয়োজন অনুযায়ী Soft Delete ব্যবহার করা হবে।
-- Tenant-owned Record-এ Organization ID রাখতে হবে।
-- প্রতিটি Protected Operation-এ Organizational Ownership যাচাই করতে হবে।
-
-### ১৪.৩ Multi-Tenant Data Isolation
-
-একাধিক প্রতিষ্ঠান একই NexusOS Platform ব্যবহার করতে পারবে।
-
-উদাহরণ:
-
-```text
-Organization A
-    |
-    +-- Branch A1
-    +-- Branch A2
-
-Organization B
-    |
-    +-- Branch B1
-    +-- Branch B2
-```
-
-Organization A-এর কোনো User যেন Organization B-এর Private Data Access করতে না পারে।
-
-এটি শুধু Frontend থেকে Page Hide করে নিশ্চিত করা যাবে না। Backend Authorization এবং Database Design-এর মাধ্যমে নিশ্চিত করতে হবে।
-
----
-
-## ১৫. API Design
-
-### ১৫.১ API Convention
-
-Base Path:
-
-```text
-/api/v1
-```
-
-API Design-এ ব্যবহার করা হবে:
-
-- RESTful Endpoint।
-- JSON Request এবং Response।
-- HTTP Status Code।
-- Bearer Token Authentication।
-- Pagination।
-- Input Validation।
-- Standard Error Response।
-
-### ১৫.২ প্রধান API Endpoint
-
-| Method | Endpoint | কাজ |
-|---|---|---|
-| GET | `/api/v1/users/me` | নিজের Profile দেখা |
-| GET | `/api/v1/organizations` | অনুমোদিত Organization দেখা |
-| POST | `/api/v1/organizations` | Organization তৈরি |
-| GET | `/api/v1/employees` | Employee List |
-| POST | `/api/v1/employees` | Employee তৈরি |
-| GET | `/api/v1/attendance` | Attendance দেখা |
-| POST | `/api/v1/attendance/check-in` | Check-in |
-| POST | `/api/v1/attendance/check-out` | Check-out |
-| GET | `/api/v1/leave-requests` | Leave Request List |
-| POST | `/api/v1/leave-requests` | Leave Request তৈরি |
-| POST | `/api/v1/leave-requests/{id}/approve` | Leave Approve |
-| POST | `/api/v1/leave-requests/{id}/reject` | Leave Reject |
-| GET | `/api/v1/products` | Product List |
-| POST | `/api/v1/products` | Product তৈরি |
-| POST | `/api/v1/purchase-requests` | Purchase Request তৈরি |
-| GET | `/api/v1/purchase-orders` | Purchase Order দেখা |
-| POST | `/api/v1/sales-orders` | Sales Order তৈরি |
-| GET | `/api/v1/workflows` | Workflow List |
-| POST | `/api/v1/workflows` | Workflow তৈরি |
-| POST | `/api/v1/workflows/{id}/publish` | Workflow Publish |
-| GET | `/api/v1/reports/overview` | Business Overview |
-| GET | `/api/v1/audit-logs` | Audit Log দেখা |
-
-### ১৫.৩ API Request উদাহরণ
-
-```http
-POST /api/v1/leave-requests
-Authorization: Bearer FIREBASE_ID_TOKEN
-Content-Type: application/json
-```
-
-```json
-{
-  "startDate": "2026-12-10",
-  "endDate": "2026-12-12",
-  "leaveType": "ANNUAL",
-  "reason": "Personal reasons"
-}
-```
-
-### ১৫.৪ API Response উদাহরণ
-
-```json
-{
-  "success": true,
-  "message": "Leave request submitted successfully.",
-  "data": {
-    "id": "REQUEST_UUID",
-    "status": "PENDING_APPROVAL"
-  }
-}
-```
-
----
-
-## ১৬. Technology Stack
-
-| Layer | Technology | ব্যবহার |
-|---|---|---|
-| Frontend | React | User Interface |
-| Language | TypeScript | Type-safe Development |
-| Styling | Tailwind CSS | Responsive Design |
-| Workflow UI | React Flow | Visual Workflow Editor |
-| Charts | Recharts | Data Visualization |
-| Backend | Java 21+ | Backend Programming |
-| Framework | Spring Boot | Backend Framework |
-| Security | Spring Security | API Security |
-| ORM | Spring Data JPA / Hibernate | Database Access |
-| API | REST | Frontend-Backend Communication |
-| Database | PostgreSQL | Business Data |
-| Database Hosting | Supabase | Managed PostgreSQL |
-| Authentication | Firebase Authentication | User Identity |
-| Storage | Supabase Storage | Document এবং Image |
-| Notifications | Firebase Cloud Messaging | Push Notification |
-| Testing | JUnit 5 | Backend Testing |
-| Mocking | Mockito | Unit Testing |
-| E2E Testing | Playwright | Browser Testing |
-| Version Control | Git | Code Management |
-| Repository | GitHub | Team Collaboration |
-
-### ১৬.১ Technology নির্বাচন করার কারণ
-
-**React + TypeScript:** Component-based UI এবং Type Safety।
-
-**Spring Boot:** Structured Java Backend, Security এবং REST API।
-
-**PostgreSQL:** Relational Database এবং Transaction Management।
-
-**Firebase Authentication:** User Identity এবং Authentication।
-
-**Supabase Storage:** Document এবং Image সংরক্ষণ।
-
-**React Flow:** Visual Workflow Builder তৈরি।
-
-### ১৬.২ গুরুত্বপূর্ণ Architecture সিদ্ধান্ত
-
-Firebase Authentication ব্যবহার করা হবে শুধু User Identity এবং Authentication-এর জন্য।
-
-মূল Business Data PostgreSQL-এ সংরক্ষিত হবে।
-
-Backend Firebase ID Token যাচাই করবে এবং নিজস্ব Authorization Check সম্পন্ন করবে।
-
----
-
-## ১৭. Object-Oriented Programming (OOP)
-
-NexusOS-এ Object-Oriented Programming-এর প্রধান চারটি বৈশিষ্ট্য ব্যবহার করার পরিকল্পনা রয়েছে।
-
-### ১৭.১ Encapsulation
-
-Data এবং সংশ্লিষ্ট Method একই Class-এর মধ্যে রাখা।
-
-উদাহরণ:
-
-```java
-public class Employee {
-
-    private String employeeCode;
-    private String designation;
-
-    public String getEmployeeCode() {
-        return employeeCode;
-    }
-
-    public void updateDesignation(String designation) {
-        if (designation == null || designation.isBlank()) {
-            throw new IllegalArgumentException(
-                "Designation cannot be empty"
-            );
-        }
-
-        this.designation = designation;
-    }
-}
-```
-
-### ১৭.২ Inheritance
-
-একটি Class অন্য Class-এর Common Property এবং Behaviour ব্যবহার করতে পারে।
-
-```java
-public abstract class BaseEntity {
-
-    protected UUID id;
-    protected Instant createdAt;
-    protected Instant updatedAt;
-}
-```
-
-### ১৭.৩ Abstraction
-
-Implementation-এর জটিলতা আড়াল করে প্রয়োজনীয় Operation প্রকাশ করা।
-
-```java
-public interface NotificationService {
-
-    void sendNotification(
-        String recipient,
-        String message
-    );
-}
-```
-
-### ১৭.৪ Polymorphism
-
-একই Interface-এর বিভিন্ন Implementation তৈরি করা।
-
-```java
-public class EmailNotificationService
-        implements NotificationService {
-
-    @Override
-    public void sendNotification(
-            String recipient,
-            String message) {
-        // Email implementation
-    }
-}
-```
-
-### ১৭.৫ SOLID Principles
-
-| Principle | NexusOS-এ ব্যবহার |
-|---|---|
-| Single Responsibility | প্রতিটি Service একটি নির্দিষ্ট দায়িত্ব পালন করবে |
-| Open/Closed | নতুন Workflow Action সহজে যুক্ত করা যাবে |
-| Liskov Substitution | Interface-এর Implementation সামঞ্জস্যপূর্ণ থাকবে |
-| Interface Segregation | ছোট এবং নির্দিষ্ট Interface তৈরি হবে |
-| Dependency Inversion | Service Abstraction-এর ওপর নির্ভর করবে |
-
----
-
-## ১৮. Design Patterns
-
-| Design Pattern | ব্যবহার |
-|---|---|
-| Factory | Workflow Action Handler তৈরি |
-| Strategy | Approval এবং Calculation Policy |
-| Observer | Business Event-এর প্রতিক্রিয়া |
-| State | Request এবং Workflow State পরিচালনা |
-| Command | Workflow Action Represent করা |
-| Chain of Responsibility | Approval Stage পরিচালনা |
-| Builder | Complex Report এবং Workflow Object তৈরি |
-
-### ১৮.১ Strategy Pattern উদাহরণ
-
-```java
-public interface ApprovalStrategy {
-
-    boolean approve(PurchaseRequest request);
-}
-```
-
-```java
-public class ManagerApprovalStrategy
-        implements ApprovalStrategy {
-
-    @Override
-    public boolean approve(PurchaseRequest request) {
-        return request.getEstimatedCost() <= 10000;
-    }
-}
-```
-
-এটি শুধু Pattern বোঝানোর উদাহরণ। বাস্তবে Approval Policy Configurable হতে হবে এবং অনুমোদনের জন্য যথাযথ Permission যাচাই করতে হবে।
-
-### ১৮.২ Observer Pattern উদাহরণ
-
-Purchase Request তৈরি হলে একাধিক Listener কাজ করতে পারবে।
-
-```text
-Purchase Request Created
-          |
-          +----> Notification Listener
-          |
-          +----> Workflow Listener
-          |
-          +----> Audit Listener
-```
-
----
-
-## ১৯. Security Requirements
-
-কারণ এই সিস্টেমে কর্মী, Finance, Customer এবং প্রতিষ্ঠানের গুরুত্বপূর্ণ তথ্য থাকবে, তাই Security অত্যন্ত গুরুত্বপূর্ণ।
-
-### ১৯.১ Authentication
-
-- Firebase Authentication।
-- Backend-এ Firebase ID Token Verification।
-- Secure Session Handling।
-- Account Deactivation।
-- Token Expiration Handling।
-
-### ১৯.২ Authorization
-
-- Role-Based Access Control।
-- Permission-based API Authorization।
-- Organization-level Isolation।
-- Branch-level Restriction।
-- Department-level Restriction।
-- Resource Ownership Check।
-
-### ১৯.৩ Data Protection
-
-- HTTPS।
-- Environment Variables।
-- GitHub-এ Secret সংরক্ষণ না করা।
-- Secure File Access।
-- Input Validation।
-- Parameterized Database Operation।
-- Output Encoding।
-- Sensitive API-তে Rate Limiting।
-- Audit Logging।
-
-### ১৯.৪ Audit Logging
-
-গুরুত্বপূর্ণ কাজের জন্য সংরক্ষণ করতে হবে:
-
-- User ID।
-- Organization ID।
-- Action।
-- Entity Type।
-- Entity ID।
-- Previous Value।
-- New Value।
-- Timestamp।
-- Request ID।
-
-Audit Log অননুমোদিত পরিবর্তন থেকে সুরক্ষিত রাখতে হবে।
-
-**গুরুত্বপূর্ণ নিয়ম: Frontend-এ Permission Hide করলেই Security নিশ্চিত হয় না। Backend-এ প্রতিটি Sensitive Action যাচাই করতে হবে।**
-
----
-
-## ২০. Testing Strategy
-
-### ২০.১ Unit Testing
-
-Tools:
-
-- JUnit 5।
-- Mockito।
-
-প্রতিটি Service, Validation Rule, Calculation এবং Workflow Component আলাদাভাবে পরীক্ষা করতে হবে।
-
-### ২০.২ Integration Testing
-
-পরীক্ষা করতে হবে:
-
-- Database Operation।
-- Authentication Verification।
-- API Authorization।
-- Service Interaction।
-- Workflow Execution।
-- Transaction Consistency।
-
-### ২০.৩ End-to-End Testing
-
-Tool: Playwright।
-
-গুরুত্বপূর্ণ User Journey:
-
-১. Login।
-
-২. Employee তৈরি।
-
-৩. Leave Application।
-
-৪. Leave Approval।
-
-৫. Purchase Request।
-
-৬. Budget Approval।
-
-৭. Goods Receiving।
-
-৮. Inventory Update।
-
-৯. Report Generation।
-
-### ২০.৪ Acceptance Criteria
-
-| Feature | সফলতার শর্ত |
-|---|---|
-| Login | বৈধ ব্যবহারকারী Login করতে পারবে |
-| Authorization | অনুমতিহীন ব্যবহারকারী Protected Resource Access করতে পারবে না |
-| Employee Management | HR Employee Record পরিচালনা করতে পারবে |
-| Leave | Employee Leave Application দিতে পারবে |
-| Approval | শুধু অনুমোদিত ব্যক্তি Request Approve করতে পারবে |
-| Inventory | Stock Movement সঠিকভাবে সংরক্ষিত হবে |
-| Procurement | Approved Purchase থেকে Purchase Order তৈরি হবে |
-| Workflow | Workflow Execution-এর ইতিহাস দেখা যাবে |
-| Reporting | Report Permission অনুযায়ী তথ্য দেখাবে |
-| Audit | গুরুত্বপূর্ণ পরিবর্তনের Audit Record তৈরি হবে |
-
----
-
-## ২১. Deployment Architecture
-
-### ২১.১ প্রস্তাবিত Deployment
-
-```text
-User Browser
-     |
-     v
-Frontend Hosting
-     |
-     +----> Firebase Authentication
-     |
-     v
-Spring Boot Backend
-     |
-     +----> Supabase PostgreSQL
-     |
-     +----> Supabase Storage
-```
-
-### ২১.২ Development Environment
-
-প্রয়োজনীয় Software:
-
-- Windows, Linux অথবা macOS।
-- Node.js LTS।
-- Java 21 বা নতুন সমর্থিত Version।
-- Maven।
-- Git।
-- PostgreSQL অথবা Supabase Project।
-- Firebase Project।
-- IntelliJ IDEA অথবা Visual Studio Code।
-
-### ২১.৩ Environment Variables
+- Pytest.
 
 Frontend:
 
-```env
-VITE_API_BASE_URL=http://localhost:8080/api/v1
+- Component and interaction tests.
 
-VITE_FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
-VITE_FIREBASE_AUTH_DOMAIN=YOUR_FIREBASE_AUTH_DOMAIN
-VITE_FIREBASE_PROJECT_ID=YOUR_FIREBASE_PROJECT_ID
-```
+## Integration Testing
 
-Backend:
+Test:
 
-```env
-SERVER_PORT=8080
+- Authentication integration.
+- Firestore operations.
+- Cloudinary uploads.
+- Spring Boot to FastAPI communication.
+- Job application workflow.
+- Field assignment workflow.
+- AI result persistence.
 
-DATABASE_URL=YOUR_DATABASE_URL
-DATABASE_USERNAME=YOUR_DATABASE_USERNAME
-DATABASE_PASSWORD=YOUR_DATABASE_PASSWORD
+## Authorization Testing
 
-FIREBASE_PROJECT_ID=YOUR_FIREBASE_PROJECT_ID
+Verify that:
 
-SUPABASE_URL=YOUR_SUPABASE_URL
-SUPABASE_SERVICE_ROLE_KEY=YOUR_SERVER_SIDE_SECRET
-```
+- A user cannot manage another user's private farm.
+- A farmer cannot access an unassigned field.
+- An unauthorized user cannot approve an application.
+- A user cannot read private conversations without membership.
+- An unrelated user cannot access payment records.
 
-বাস্তব Secret, Password এবং Private Key কখনো GitHub-এ Upload করা যাবে না।
+## AI Testing
 
-### ২১.৪ সম্ভাব্য Hosting
+Evaluate:
 
-- Frontend: Vercel অথবা Cloudflare Pages।
-- Backend: Render অথবা Java-compatible Hosting।
-- Database: Supabase PostgreSQL।
-- Authentication: Firebase Authentication।
-- Storage: Supabase Storage।
+- Model accuracy.
+- Precision.
+- Recall.
+- F1-score.
+- Confusion matrix.
+- Inference failures.
+- Input validation.
 
-Free Tier-এর সীমাবদ্ধতা থাকতে পারে। Production পর্যায়ে Paid Hosting প্রয়োজন হতে পারে।
+For image classification, test the model on data that was not used for training.
 
----
+## Acceptance Testing
 
-## ২২. Project Structure
+The system should demonstrate:
 
-### ২২.১ Frontend Structure
-
-```text
-nexusos-frontend/
-│
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   │   ├── common/
-│   │   ├── layout/
-│   │   ├── forms/
-│   │   └── charts/
-│   │
-│   ├── modules/
-│   │   ├── organization/
-│   │   ├── employees/
-│   │   ├── attendance/
-│   │   ├── leave/
-│   │   ├── payroll/
-│   │   ├── finance/
-│   │   ├── inventory/
-│   │   ├── procurement/
-│   │   ├── crm/
-│   │   ├── sales/
-│   │   ├── projects/
-│   │   ├── workflows/
-│   │   ├── documents/
-│   │   └── reports/
-│   │
-│   ├── hooks/
-│   ├── services/
-│   ├── contexts/
-│   ├── routes/
-│   ├── types/
-│   ├── utils/
-│   ├── config/
-│   ├── App.tsx
-│   └── main.tsx
-│
-├── .env.example
-├── package.json
-└── README.md
-```
-
-### ২২.২ Backend Structure
-
-```text
-nexusos-backend/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/com/nexusos/
-│   │   │   ├── config/
-│   │   │   ├── security/
-│   │   │   ├── common/
-│   │   │   ├── exception/
-│   │   │   ├── organization/
-│   │   │   ├── user/
-│   │   │   ├── employee/
-│   │   │   ├── attendance/
-│   │   │   ├── leave/
-│   │   │   ├── payroll/
-│   │   │   ├── finance/
-│   │   │   ├── inventory/
-│   │   │   ├── procurement/
-│   │   │   ├── crm/
-│   │   │   ├── sales/
-│   │   │   ├── project/
-│   │   │   ├── workflow/
-│   │   │   ├── notification/
-│   │   │   ├── document/
-│   │   │   ├── reporting/
-│   │   │   └── audit/
-│   │   │
-│   │   └── resources/
-│   │       ├── application.yml
-│   │       └── db/migration/
-│   │
-│   └── test/
-│
-├── pom.xml
-├── .env.example
-└── README.md
-```
-
-### ২২.৩ Backend Module Convention
-
-```text
-employee/
-├── controller/
-├── service/
-├── repository/
-├── entity/
-├── dto/
-├── mapper/
-└── validation/
-```
-
-প্রতিটি Module-এ Controller, Service, Repository এবং Entity-এর দায়িত্ব আলাদা রাখতে হবে।
+1. Successful user registration.
+2. Farm registration.
+3. Field creation.
+4. Job publication.
+5. Job application.
+6. Application review.
+7. Farmer assignment.
+8. Restricted farmer workspace.
+9. Crop image submission.
+10. AI result storage and display.
+11. Payment and rating history.
 
 ---
 
-## ২৩. Development Roadmap
+# 🔒 32. Security Considerations
 
-NexusOS-এর Development ধাপে ধাপে সম্পন্ন করার পরিকল্পনা করা হয়েছে।
+Security is an essential part of AgroAI.
 
-### ২৩.১ Development Phase
+### Authentication
 
-| Phase | কাজ | প্রত্যাশিত ফলাফল |
-|---|---|---|
-| Phase 1 | Requirement এবং Planning | SRS এবং Architecture |
-| Phase 2 | Database এবং Authentication | Secure Foundation |
-| Phase 3 | Organization এবং HR | Employee Management |
-| Phase 4 | Attendance এবং Leave | HR Workflow |
-| Phase 5 | Finance এবং Inventory | Integrated Business Records |
-| Phase 6 | Procurement এবং Sales | Purchase-to-Sales Operations |
-| Phase 7 | Workflow Engine | Automated Approval |
-| Phase 8 | Analytics এবং Notifications | Management Dashboard |
-| Phase 9 | Testing এবং Deployment | Demonstrable Prototype |
+- Firebase Authentication.
+- Firebase ID token verification on the backend.
+- Secure session and token handling.
 
-### ২৩.২ Gantt Chart
+### Authorization
 
-ইংরেজি অংশের Gantt Chart-এ একটি প্রস্তাবিত সময়সূচি দেখানো হয়েছে।
+- Resource ownership validation.
+- Field assignment validation.
+- Conversation membership validation.
+- Payment record access validation.
 
-এটি চূড়ান্ত Deadline নয়। দলের সদস্যসংখ্যা, কাজের পরিমাণ এবং বিশ্ববিদ্যালয়ের সময়সীমা অনুযায়ী পরিবর্তন করতে হবে।
+### Data Protection
+
+- Keep credentials outside the repository.
+- Validate all API inputs.
+- Restrict image uploads by type and size.
+- Use HTTPS in deployment.
+- Avoid exposing sensitive database information.
+- Use secure Cloudinary upload mechanisms.
+
+### AI Service Security
+
+- Do not expose the AI service publicly without protection.
+- Validate all AI requests.
+- Restrict access to the AI service.
+- Validate image URLs and input sizes.
+- Handle model errors safely.
+
+### Data Integrity
+
+- Preserve assignment history.
+- Preserve relevant payment history.
+- Store timestamps consistently.
+- Avoid duplicate job applications.
+- Validate state transitions.
 
 ---
 
-## ২৪. তিন সদস্যের Team Responsibilities
+# 🌍 33. Future Improvements
 
-### ২৪.১ প্রস্তাবিত দায়িত্ব বণ্টন
+Possible future enhancements include:
 
-| Member | প্রধান দায়িত্ব | কাজ |
-|---|---|---|
-| Member 1 | Backend এবং Workflow | Spring Boot API, Business Logic, Workflow Engine, Authorization |
-| Member 2 | Frontend এবং UI/UX | React Application, Dashboard, Form, Workflow Editor |
-| Member 3 | Database, Integration এবং QA | PostgreSQL, Firebase Integration, Testing, Documentation |
+- IoT-based soil moisture sensors.
+- Real-time environmental monitoring.
+- Weather API integration.
+- Advanced crop disease detection.
+- More agricultural datasets.
+- Bengali-language AI recommendations.
+- Mobile application.
+- Advanced yield prediction.
+- Automated agricultural alerts.
+- Satellite-based crop monitoring.
+- Farm performance analytics.
+- Agricultural marketplace expansion.
 
-### ২৪.২ সবার যৌথ দায়িত্ব
+---
 
-- Requirement Analysis।
-- Architecture Discussion।
-- Code Review।
-- Integration Testing।
-- Bug Fixing।
-- Demonstration Preparation।
-- Documentation Update।
+# ⚠️ 34. Limitations
 
-### ২৪.৩ Presentation Division
+The initial project version may have the following limitations:
 
-| Presenter | উপস্থাপনার বিষয় |
+1. AI accuracy depends on dataset quality and model validation.
+2. Crop disease predictions may not cover every crop or disease.
+3. Irrigation recommendations depend on available input data.
+4. Real-time soil telemetry requires external sensors or manual submissions.
+5. Cloudinary and Firebase free plans have usage and storage limits.
+6. Internet access is required for cloud-based services.
+7. Payment records are not equivalent to verified financial transactions.
+8. The system does not guarantee agricultural outcomes.
+
+AgroAI is intended as an agricultural decision-support platform, not a replacement for qualified agricultural expertise.
+
+---
+
+# ❓ 35. Frequently Asked Questions
+
+### Q1. What is AgroAI?
+
+AgroAI is a digital agricultural management and AI-assisted decision support platform.
+
+### Q2. Which backend technology is used?
+
+Java 21 with Spring Boot 3.
+
+### Q3. Which database is used?
+
+Firebase Cloud Firestore.
+
+### Q4. Why is Python used?
+
+Python provides machine-learning and deep-learning libraries used by the AI service.
+
+### Q5. Can a user own multiple farms?
+
+Yes. One registered user can own multiple farms.
+
+### Q6. Can multiple farmers work on the same field?
+
+Yes. AgroAI supports multiple farmer assignments per field.
+
+### Q7. Can one farmer work on multiple fields?
+
+Yes. Assignment records support this relationship.
+
+### Q8. Where are uploaded images stored?
+
+Images are stored in Cloudinary. Their URLs and metadata are maintained in Firestore.
+
+### Q9. Can farmers access all farm information?
+
+No. Farmers receive access to their assigned fields and permitted operations only.
+
+### Q10. Is the AI model production-ready?
+
+Not necessarily. Model readiness depends on training, evaluation, and validation. Demonstration outputs must be clearly identified.
+
+### Q11. Does AgroAI process actual financial transactions?
+
+The initial design supports payment record management. Actual financial transactions would require a separate payment gateway integration.
+
+---
+
+# 👨‍👩‍👦 36. Contributors
+
+Developed as a three-member university OOP Lab project.
+
+| Member | Responsibility |
 |---|---|
-| Presenter 1 | Introduction, Problem, Objectives, System Modules |
-| Presenter 2 | Workflow Engine, Architecture, Technology Stack, Database |
-| Presenter 3 | OOP, Design Patterns, Integrated Example, Roadmap এবং Conclusion |
+| Member 1 | Backend and System Architecture |
+| Member 2 | Frontend and Marketplace |
+| Member 3 | AI and Agricultural Intelligence |
+
+**University:** [University Name]
+
+**Department:** Computer Science and Engineering
+
+**Course:** Object-Oriented Programming Lab
+
+**Supervisor:** [Faculty Name]
 
 ---
 
-## ২৫. Risks, Assumptions এবং Constraints
+# 🙏 37. Acknowledgements
 
-### ২৫.১ সম্ভাব্য ঝুঁকি
+We would like to express our gratitude to our course instructor and university for providing the opportunity to develop this project.
 
-| Risk | Impact | সমাধান |
-|---|---|---|
-| জটিল Workflow Logic | High | ধাপে ধাপে Workflow Engine তৈরি |
-| Database Inconsistency | High | Transaction এবং Constraint ব্যবহার |
-| Unauthorized Data Access | Critical | Backend Authorization এবং Tenant Isolation |
-| Scope Expansion | High | MVP নির্ধারণ |
-| Team Integration Issue | Medium | পরিষ্কার API Contract |
-| Hosting Limitation | Medium | Local Demo Environment রাখা |
-| Incomplete Testing | High | Automated Test তৈরি |
-
-### ২৫.২ Assumptions
-
-- ব্যবহারকারীর Internet Connection থাকবে।
-- প্রতিষ্ঠান সঠিক Business Information প্রদান করবে।
-- Administrator Role এবং Permission নির্ধারণ করবেন।
-- প্রতিটি প্রতিষ্ঠানের আলাদা Organization ID থাকবে।
-- Backend Business Rule নিয়ন্ত্রণ করবে।
-- External Service-এর Free Tier সীমাবদ্ধতা থাকতে পারে।
-
-### ২৫.৩ Constraints
-
-- বিশ্ববিদ্যালয়ের নির্ধারিত সময়সীমা।
-- সীমিত Team Member।
-- সীমিত Hosting Budget।
-- External Service-এর Availability।
-- বাস্তব Enterprise Data-তে সীমিত প্রবেশাধিকার।
-
----
-
-## ২৬. ভবিষ্যৎ উন্নয়ন
-
-ভবিষ্যতে NexusOS-এ যুক্ত করা যেতে পারে:
-
-১. AI-powered Business Analytics।
-
-২. Predictive Inventory Management।
-
-৩. Advanced Workflow Recommendation।
-
-৪. Mobile Application।
-
-৫. Biometric Attendance Integration।
-
-৬. Financial Forecasting।
-
-৭. Supplier Performance Analytics।
-
-৮. Advanced Project Resource Planning।
-
-৯. Multi-language Support।
-
-১০. External Accounting System Integration।
-
-১১. প্রয়োজন অনুযায়ী Microservices Architecture।
-
-১২. Advanced Business Intelligence Dashboard।
-
----
-
-## ২৭. Glossary — গুরুত্বপূর্ণ শব্দের অর্থ
-
-| English Term | বাংলা অর্থ |
-|---|---|
-| ERP | প্রতিষ্ঠানের সামগ্রিক সম্পদ ও কার্যক্রম ব্যবস্থাপনা |
-| CRM | গ্রাহক সম্পর্ক ব্যবস্থাপনা |
-| HRM | মানবসম্পদ ব্যবস্থাপনা |
-| RBAC | Role অনুযায়ী প্রবেশাধিকার নিয়ন্ত্রণ |
-| API | সফটওয়্যারগুলোর মধ্যে যোগাযোগের মাধ্যম |
-| ORM | Object এবং Database-এর মধ্যে সংযোগ ব্যবস্থা |
-| SRS | সফটওয়্যারের প্রয়োজনীয়তার বিস্তারিত বিবরণ |
-| KPI | কার্যক্ষমতা পরিমাপের সূচক |
-| SKU | পণ্য শনাক্ত করার ইউনিক কোড |
-| JWT | JSON Web Token |
-| CRUD | Create, Read, Update, Delete |
-| Workflow | ধারাবাহিকভাবে সম্পন্ন হওয়া কাজের প্রক্রিয়া |
-| Tenant | Multi-tenant সিস্টেমে আলাদা প্রতিষ্ঠান |
-| Audit Log | গুরুত্বপূর্ণ কার্যক্রমের ইতিহাস |
-| Modular Monolith | একটি Application-এর মধ্যে আলাদা আলাদা Module |
-
----
-
-## ২৮. প্রকল্পের বর্তমান অবস্থা এবং একাডেমিক ঘোষণা
-
-<badge color="info">Proposed / In Development</badge>
-
-NexusOS একটি প্রস্তাবিত বিশ্ববিদ্যালয় পর্যায়ের Software Engineering Project।
-
-এই README-তে দেওয়া Requirement, Diagram, Architecture এবং Code Example প্রকল্পটির পরিকল্পিত নকশা তুলে ধরে।
-
-এগুলোর অর্থ এই নয় যে সব Feature ইতোমধ্যে Implement, Test অথবা Deploy করা হয়েছে।
-
-Development এগিয়ে যাওয়ার সঙ্গে সঙ্গে প্রকৃত Implementation Status আপডেট করতে হবে।
-
----
-
-## ২৯. উপসংহার
-
-NexusOS-এর মূল লক্ষ্য হলো একটি প্রতিষ্ঠানের বিভিন্ন বিভাগকে একটি কেন্দ্রীয় ডিজিটাল প্ল্যাটফর্মে সংযুক্ত করা।
-
-Organization Management, HR, Finance, Inventory, Procurement, Sales, Project Management এবং Workflow Automation-এর সমন্বয়ের মাধ্যমে প্রতিষ্ঠান তার কার্যক্রম আরও সহজ, স্বচ্ছ এবং কার্যকরভাবে পরিচালনা করতে পারবে।
-
-এই প্রকল্পের সবচেয়ে গুরুত্বপূর্ণ বৈশিষ্ট্য হলো Workflow Automation Engine, যা বিভিন্ন বিভাগের কাজকে একটি ধারাবাহিক, নিয়ন্ত্রিত এবং অনুসরণযোগ্য প্রক্রিয়ায় যুক্ত করবে।
-
-**NexusOS — একটি প্ল্যাটফর্ম। প্রতিটি বিভাগ। সংযুক্ত কার্যপ্রবাহ।**
-
----
-
-## ৩০. References and Useful Documentation
-
-- React: https://react.dev/
-- TypeScript: https://www.typescriptlang.org/docs/
-- Tailwind CSS: https://tailwindcss.com/docs
-- Spring Boot: https://docs.spring.io/spring-boot/
-- Spring Security: https://docs.spring.io/spring-security/reference/
-- PostgreSQL: https://www.postgresql.org/docs/
-- Supabase: https://supabase.com/docs
-- Firebase Authentication: https://firebase.google.com/docs/auth
-- React Flow: https://reactflow.dev/
-- Mermaid: https://mermaid.js.org/
-- JUnit: https://junit.org/junit5/docs/current/user-guide/
-- Mockito: https://site.mockito.org/
-- Playwright: https://playwright.dev/docs/intro
+We also acknowledge the developers and communities behind Java, Spring Boot, React, Firebase, Python, PyTorch, Scikit-learn, and other open-source technologies that support modern software development.
 
 ---
 
 <p align="center">
-  <strong>NexusOS</strong><br/>
-  One Platform. Every Department. Connected Workflows.
+
+# 🌱 AgroAI
+
+### Smart Agriculture. Connected Farmers. Intelligent Decisions.
+
+**Building a smarter agricultural ecosystem through software engineering and artificial intelligence.**
+
+</p>
+
+<p align="center">
+  Made with dedication by the AgroAI Team.
 </p>
